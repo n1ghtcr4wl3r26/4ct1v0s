@@ -1,0 +1,963 @@
+<?xml version = '1.0' encoding = 'windows-1252'?>
+<project xmlns="http://xmlns.oracle.com/jdeveloper/903/jproject" nselem="project" class="oracle.jdeveloper.model.JProject">
+   <defaultPackage>aduana.app.struts.controller</defaultPackage>
+   <defaultPackages class="java.util.ArrayList">
+      <Item class="java.lang.String">aduana.app.struts.controller</Item>
+      <Item class="java.lang.String">ActivosFijos</Item>
+      <Item class="java.lang.String">PaquetePrincipal</Item>
+   </defaultPackages>
+   <dependencyList/>
+   <htmlRootDirectory path="public_html/"/>
+   <j2eeWebAppName>ActivosFijos-ActivosFijos-webapp</j2eeWebAppName>
+   <j2eeWebContextRoot>ActivosFijos-ActivosFijos-context-root</j2eeWebContextRoot>
+   <listOfChildren class="oracle.ide.model.DataList">
+      <Item class="oracle.jdeveloper.deploy.war.dd.WebAppNode">
+         <URL path="public_html/WEB-INF/web.xml"/>
+      </Item>
+      <Item class="oracle.jdevimpl.web.struts.StrutsConfigNode">
+         <URL path="public_html/WEB-INF/struts-config.xml"/>
+      </Item>
+      <Item class="oracle.bali.xml.addin.XMLSourceNode">
+         <URL path="public_html/WEB-INF/tiles-defs.xml"/>
+      </Item>
+      <Item class="oracle.ide.model.DeployableTextNode">
+         <URL path="public_html/layout/estilos.css"/>
+      </Item>
+      <Item class="oracle.ide.model.XMLDataNode">
+         <URL path="configura.deploy"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JspSourceNode">
+         <URL path="public_html/layout/ventana01.jsp"/>
+         <encoding>windows-1252</encoding>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JspSourceNode">
+         <URL path="public_html/layout/ventana02.jsp"/>
+         <encoding>windows-1252</encoding>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JspSourceNode">
+         <URL path="public_html/layout/ventana03.jsp"/>
+         <encoding>windows-1252</encoding>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JspSourceNode">
+         <URL path="public_html/layout/ventana04.jsp"/>
+         <encoding>windows-1252</encoding>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JspSourceNode">
+         <URL path="public_html/layout/ventana05.jsp"/>
+         <encoding>windows-1252</encoding>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JspSourceNode">
+         <URL path="public_html/layout/ventana06.jsp"/>
+         <encoding>windows-1252</encoding>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JavaSourceNode">
+         <URL path="src/Paquete/ClaseUsuario.java"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JavaSourceNode">
+         <URL path="src/Paquete/ClaseWsUsuario.java"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JavaSourceNode">
+         <URL path="src/Paquete/IClaseEnvio.java"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JavaSourceNode">
+         <URL path="src/Paquete/ClaseOpcion.java"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JavaSourceNode">
+         <URL path="src/ActivosFijos/Activos.java"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JavaSourceNode">
+         <URL path="src/ActivosFijos/Activos2DetalleForm.java"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JavaSourceNode">
+         <URL path="src/ActivosFijos/ActivosAction.java"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JavaSourceNode">
+         <URL path="src/ActivosFijos/ActivosDetalleForm.java"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JavaSourceNode">
+         <URL path="src/ActivosFijos/ActivosForm.java"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JavaSourceNode">
+         <URL path="src/ActivosFijos/BDConection.java"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JavaSourceNode">
+         <URL path="src/ActivosFijos/ClaseOpcion.java"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JavaSourceNode">
+         <URL path="src/ActivosFijos/Depreciaciones.java"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JavaSourceNode">
+         <URL path="src/ActivosFijos/DepreciacionesAction.java"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JavaSourceNode">
+         <URL path="src/ActivosFijos/DepreciacionesDetalleForm.java"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JavaSourceNode">
+         <URL path="src/ActivosFijos/DepreciacionesForm.java"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JavaSourceNode">
+         <URL path="src/ActivosFijos/DetDocumentosDetalleForm.java"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JavaSourceNode">
+         <URL path="src/ActivosFijos/DetDocumentosForm.java"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JavaSourceNode">
+         <URL path="src/ActivosFijos/Documentos.java"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JavaSourceNode">
+         <URL path="src/ActivosFijos/DocumentosAction.java"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JavaSourceNode">
+         <URL path="src/ActivosFijos/DocumentosDetalleForm.java"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JavaSourceNode">
+         <URL path="src/ActivosFijos/DocumentosForm.java"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JavaSourceNode">
+         <URL path="src/ActivosFijos/EstadosForm.java"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JavaSourceNode">
+         <URL path="src/ActivosFijos/Financiadores.java"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JavaSourceNode">
+         <URL path="src/ActivosFijos/FinanciadoresAction.java"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JavaSourceNode">
+         <URL path="src/ActivosFijos/FinanciadoresDetalle.java"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JavaSourceNode">
+         <URL path="src/ActivosFijos/FinanciadoresDetalleForm.java"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JavaSourceNode">
+         <URL path="src/ActivosFijos/FinanciadoresForm.java"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JavaSourceNode">
+         <URL path="src/ActivosFijos/Funcionarios.java"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JavaSourceNode">
+         <URL path="src/ActivosFijos/FuncionariosAction.java"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JavaSourceNode">
+         <URL path="src/ActivosFijos/FuncionariosDetalleForm.java"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JavaSourceNode">
+         <URL path="src/ActivosFijos/FuncionariosForm.java"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JavaSourceNode">
+         <URL path="src/ActivosFijos/Grupos.java"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JavaSourceNode">
+         <URL path="src/ActivosFijos/GruposAction.java"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JavaSourceNode">
+         <URL path="src/ActivosFijos/GruposDetalleForm.java"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JavaSourceNode">
+         <URL path="src/ActivosFijos/GruposForm.java"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JavaSourceNode">
+         <URL path="src/ActivosFijos/InicioAction.java"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JavaSourceNode">
+         <URL path="src/ActivosFijos/InicioForm.java"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JavaSourceNode">
+         <URL path="src/ActivosFijos/Inventarios.java"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JavaSourceNode">
+         <URL path="src/ActivosFijos/Mejoras.java"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JavaSourceNode">
+         <URL path="src/ActivosFijos/MejorasRebajas.java"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JavaSourceNode">
+         <URL path="src/ActivosFijos/MejorasRebajasAction.java"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JavaSourceNode">
+         <URL path="src/ActivosFijos/MejorasRebajasDetalleForm.java"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JavaSourceNode">
+         <URL path="src/ActivosFijos/MejorasRebajasForm.java"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JavaSourceNode">
+         <URL path="src/ActivosFijos/MesAnioDetalleForm.java"/>
+      </Item>
+      <Item class="oracle.ide.model.DeployableTextNode">
+         <URL path="src/ActivosFijos/Messages.properties"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JavaSourceNode">
+         <URL path="src/ActivosFijos/Oficinas.java"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JavaSourceNode">
+         <URL path="src/ActivosFijos/OficinasAction.java"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JavaSourceNode">
+         <URL path="src/ActivosFijos/OficinasDetalleForm.java"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JavaSourceNode">
+         <URL path="src/ActivosFijos/OficinasForm.java"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JavaSourceNode">
+         <URL path="src/ActivosFijos/OpcionForm.java"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JavaSourceNode">
+         <URL path="src/ActivosFijos/PaginaMenu.java"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JavaSourceNode">
+         <URL path="src/ActivosFijos/Parametros.java"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JavaSourceNode">
+         <URL path="src/ActivosFijos/ParametrosDetalleForm.java"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JavaSourceNode">
+         <URL path="src/ActivosFijos/ParametrosForm.java"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JavaSourceNode">
+         <URL path="src/ActivosFijos/Partidas.java"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JavaSourceNode">
+         <URL path="src/ActivosFijos/PartidasAction.java"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JavaSourceNode">
+         <URL path="src/ActivosFijos/PartidasDetalleForm.java"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JavaSourceNode">
+         <URL path="src/ActivosFijos/PartidasForm.java"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JavaSourceNode">
+         <URL path="src/ActivosFijos/PedirRegional.java"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JavaSourceNode">
+         <URL path="src/ActivosFijos/PedirRegionalForm.java"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JavaSourceNode">
+         <URL path="src/ActivosFijos/Proyectos.java"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JavaSourceNode">
+         <URL path="src/ActivosFijos/ProyectosAction.java"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JavaSourceNode">
+         <URL path="src/ActivosFijos/ProyectosDetalleForm.java"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JavaSourceNode">
+         <URL path="src/ActivosFijos/ProyectosForm.java"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JavaSourceNode">
+         <URL path="src/ActivosFijos/ReferenciasAction.java"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JavaSourceNode">
+         <URL path="src/ActivosFijos/Regionales.java"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JavaSourceNode">
+         <URL path="src/ActivosFijos/RegionalesAction.java"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JavaSourceNode">
+         <URL path="src/ActivosFijos/RegionalesDetalleForm.java"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JavaSourceNode">
+         <URL path="src/ActivosFijos/ReporteDepreciacionesDetalleForm.java"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JavaSourceNode">
+         <URL path="src/ActivosFijos/ReporteDepreciacionesForm.java"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JavaSourceNode">
+         <URL path="src/ActivosFijos/Reportes.java"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JavaSourceNode">
+         <URL path="src/ActivosFijos/ReportesAction.java"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JavaSourceNode">
+         <URL path="src/ActivosFijos/ReportesForm.java"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JavaSourceNode">
+         <URL path="src/ActivosFijos/Revaluos.java"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JavaSourceNode">
+         <URL path="src/ActivosFijos/RevaluosAction.java"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JavaSourceNode">
+         <URL path="src/ActivosFijos/RevaluosDetalleForm.java"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JavaSourceNode">
+         <URL path="src/ActivosFijos/RevaluosForm.java"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JavaSourceNode">
+         <URL path="src/ActivosFijos/Rubros.java"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JavaSourceNode">
+         <URL path="src/ActivosFijos/RubrosAction.java"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JavaSourceNode">
+         <URL path="src/ActivosFijos/RubrosDetalleForm.java"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JavaSourceNode">
+         <URL path="src/ActivosFijos/RubrosForm.java"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JavaSourceNode">
+         <URL path="src/ActivosFijos/Secbarras.java"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JavaSourceNode">
+         <URL path="src/ActivosFijos/SecbarrasAction.java"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JavaSourceNode">
+         <URL path="src/ActivosFijos/SecBarrasDetalleForm.java"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JavaSourceNode">
+         <URL path="src/ActivosFijos/SecbarrasForm.java"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JavaSourceNode">
+         <URL path="src/ActivosFijos/Sectiposdoc.java"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JavaSourceNode">
+         <URL path="src/ActivosFijos/SectiposdocAction.java"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JavaSourceNode">
+         <URL path="src/ActivosFijos/SecTiposDocDetalleForm.java"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JavaSourceNode">
+         <URL path="src/ActivosFijos/SectiposdocForm.java"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JavaSourceNode">
+         <URL path="src/ActivosFijos/Tipocambio.java"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JavaSourceNode">
+         <URL path="src/ActivosFijos/TipocambioAction.java"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JavaSourceNode">
+         <URL path="src/ActivosFijos/TipoCambioDetalleForm.java"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JavaSourceNode">
+         <URL path="src/ActivosFijos/TipocambioForm.java"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JavaSourceNode">
+         <URL path="src/ActivosFijos/Tiposbaja.java"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JavaSourceNode">
+         <URL path="src/ActivosFijos/TiposbajaAction.java"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JavaSourceNode">
+         <URL path="src/ActivosFijos/TiposBajaDetalleForm.java"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JavaSourceNode">
+         <URL path="src/ActivosFijos/TiposbajaForm.java"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JavaSourceNode">
+         <URL path="src/ActivosFijos/Tiposdoc.java"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JavaSourceNode">
+         <URL path="src/ActivosFijos/TiposdocAction.java"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JavaSourceNode">
+         <URL path="src/ActivosFijos/TiposDocDetalleForm.java"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JavaSourceNode">
+         <URL path="src/ActivosFijos/TiposdocForm.java"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JavaSourceNode">
+         <URL path="src/ActivosFijos/Ubicaciones.java"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JavaSourceNode">
+         <URL path="src/ActivosFijos/UbicacionesAction.java"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JavaSourceNode">
+         <URL path="src/ActivosFijos/UbicacionesDetalleForm.java"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JavaSourceNode">
+         <URL path="src/ActivosFijos/UbicacionesForm.java"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JspSourceNode">
+         <URL path="public_html/Accesorios.jsp"/>
+         <encoding>windows-1252</encoding>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JspSourceNode">
+         <URL path="public_html/Activos.jsp"/>
+         <encoding>windows-1252</encoding>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JspSourceNode">
+         <URL path="public_html/Activos1.jsp"/>
+         <encoding>windows-1252</encoding>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JspSourceNode">
+         <URL path="public_html/Activos1_a.jsp"/>
+         <encoding>windows-1252</encoding>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JspSourceNode">
+         <URL path="public_html/Activos2.jsp"/>
+         <encoding>windows-1252</encoding>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JspSourceNode">
+         <URL path="public_html/Activos2_a.jsp"/>
+         <encoding>windows-1252</encoding>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JspSourceNode">
+         <URL path="public_html/Activos3.jsp"/>
+         <encoding>windows-1252</encoding>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JspSourceNode">
+         <URL path="public_html/Activos3_a.jsp"/>
+         <encoding>windows-1252</encoding>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JspSourceNode">
+         <URL path="public_html/Activos4.jsp"/>
+         <encoding>windows-1252</encoding>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JspSourceNode">
+         <URL path="public_html/Activos4_a.jsp"/>
+         <encoding>windows-1252</encoding>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JspSourceNode">
+         <URL path="public_html/Activos_a.jsp"/>
+         <encoding>windows-1252</encoding>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JspSourceNode">
+         <URL path="public_html/body.jsp"/>
+         <encoding>windows-1252</encoding>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JspSourceNode">
+         <URL path="public_html/condicionesreporteactivos.jsp"/>
+         <encoding>windows-1252</encoding>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JspSourceNode">
+         <URL path="public_html/Depreciaciones.jsp"/>
+         <encoding>windows-1252</encoding>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JspSourceNode">
+         <URL path="public_html/Documentos.jsp"/>
+         <encoding>windows-1252</encoding>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JspSourceNode">
+         <URL path="public_html/eot.jsp"/>
+         <encoding>windows-1252</encoding>
+      </Item>
+      <Item class="oracle.ide.model.DeployableTextNode">
+         <URL path="public_html/Estilos.css"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JspSourceNode">
+         <URL path="public_html/Financiadores.jsp"/>
+         <encoding>windows-1252</encoding>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JpegImageNode">
+         <URL path="public_html/fondo01.jpg"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JspSourceNode">
+         <URL path="public_html/footer.jsp"/>
+         <encoding>windows-1252</encoding>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JspSourceNode">
+         <URL path="public_html/footeradministracion.jsp"/>
+         <encoding>windows-1252</encoding>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JspSourceNode">
+         <URL path="public_html/footerprincipal.jsp"/>
+         <encoding>windows-1252</encoding>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JspSourceNode">
+         <URL path="public_html/footerreportes.jsp"/>
+         <encoding>windows-1252</encoding>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JspSourceNode">
+         <URL path="public_html/Funcionarios.jsp"/>
+         <encoding>windows-1252</encoding>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JspSourceNode">
+         <URL path="public_html/Grupos.jsp"/>
+         <encoding>windows-1252</encoding>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JspSourceNode">
+         <URL path="public_html/header.jsp"/>
+         <encoding>windows-1252</encoding>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JspSourceNode">
+         <URL path="public_html/Inicio.jsp"/>
+         <encoding>windows-1252</encoding>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JspSourceNode">
+         <URL path="public_html/InsertarFinanciadores.jsp"/>
+         <encoding>windows-1252</encoding>
+      </Item>
+      <Item class="oracle.jdeveloper.model.PngImageNode">
+         <URL path="public_html/logo.png"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JspSourceNode">
+         <URL path="public_html/MejorasRebajas.jsp"/>
+         <encoding>windows-1252</encoding>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JspSourceNode">
+         <URL path="public_html/Oficinas.jsp"/>
+         <encoding>windows-1252</encoding>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JspSourceNode">
+         <URL path="public_html/Partidas.jsp"/>
+         <encoding>windows-1252</encoding>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JspSourceNode">
+         <URL path="public_html/Password.jsp"/>
+         <encoding>windows-1252</encoding>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JspSourceNode">
+         <URL path="public_html/pedirregional.jsp"/>
+         <encoding>windows-1252</encoding>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JspSourceNode">
+         <URL path="public_html/Proyectos.jsp"/>
+         <encoding>windows-1252</encoding>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JspSourceNode">
+         <URL path="public_html/Regionales.jsp"/>
+         <encoding>windows-1252</encoding>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JspSourceNode">
+         <URL path="public_html/Reporte.jsp"/>
+         <encoding>windows-1252</encoding>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JspSourceNode">
+         <URL path="public_html/reporteactivos.jsp"/>
+         <encoding>windows-1252</encoding>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JspSourceNode">
+         <URL path="public_html/reportedepreciacione.jsp"/>
+         <encoding>windows-1252</encoding>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JspSourceNode">
+         <URL path="public_html/reportegeneral.jsp"/>
+         <encoding>windows-1252</encoding>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JspSourceNode">
+         <URL path="public_html/reporteporreferencia.jsp"/>
+         <encoding>windows-1252</encoding>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JspSourceNode">
+         <URL path="public_html/Revaluos.jsp"/>
+         <encoding>windows-1252</encoding>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JspSourceNode">
+         <URL path="public_html/Rubros.jsp"/>
+         <encoding>windows-1252</encoding>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JspSourceNode">
+         <URL path="public_html/Secbarras.jsp"/>
+         <encoding>windows-1252</encoding>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JspSourceNode">
+         <URL path="public_html/Sectiposdoc.jsp"/>
+         <encoding>windows-1252</encoding>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JspSourceNode">
+         <URL path="public_html/Tipocambio.jsp"/>
+         <encoding>windows-1252</encoding>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JspSourceNode">
+         <URL path="public_html/Tiposbaja.jsp"/>
+         <encoding>windows-1252</encoding>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JspSourceNode">
+         <URL path="public_html/Tiposdoc.jsp"/>
+         <encoding>windows-1252</encoding>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JspSourceNode">
+         <URL path="public_html/Ubicaciones.jsp"/>
+         <encoding>windows-1252</encoding>
+      </Item>
+      <Item class="oracle.ide.model.DeployableTextNode">
+         <URL path="public_html/Validaciones.js"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JspSourceNode">
+         <URL path="public_html/layout/ventana7.jsp"/>
+         <encoding>windows-1252</encoding>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JspSourceNode">
+         <URL path="public_html/Inventarios.jsp"/>
+         <encoding>windows-1252</encoding>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JavaSourceNode">
+         <URL path="src/ActivosFijos/InventariosDetalleForm.java"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JavaSourceNode">
+         <URL path="src/ActivosFijos/InventariosAction.java"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JavaSourceNode">
+         <URL path="src/ActivosFijos/InventariosForm.java"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JspSourceNode">
+         <URL path="public_html/Parametros.jsp"/>
+         <encoding>windows-1252</encoding>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JavaSourceNode">
+         <URL path="src/ActivosFijos/ParametrosAction.java"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JspSourceNode">
+         <URL path="public_html/footerreportesdep.jsp"/>
+         <encoding>windows-1252</encoding>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JspSourceNode">
+         <URL path="public_html/CambioClave.jsp"/>
+         <encoding>windows-1252</encoding>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JspSourceNode">
+         <URL path="public_html/blanco.jsp"/>
+         <encoding>windows-1252</encoding>
+      </Item>
+      <Item class="oracle.jdevimpl.webapp.html.HtmlSourceNode">
+         <URL path="public_html/index.htm"/>
+         <encoding>iso-8859-1</encoding>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JavaSourceNode">
+         <URL path="src/ActivosFijos/ActionIndex.java"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JspSourceNode">
+         <URL path="public_html/footeractivos.jsp"/>
+         <encoding>windows-1252</encoding>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JavaSourceNode">
+         <URL path="src/ActivosFijos/SubirAction.java"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JavaSourceNode">
+         <URL path="src/ActivosFijos/SubirForm.java"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JspSourceNode">
+         <URL path="public_html/Subir.jsp"/>
+         <encoding>windows-1252</encoding>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JavaSourceNode">
+         <URL path="src/ActivosFijos/ClaseEstructura.java"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JavaSourceNode">
+         <URL path="src/ActivosFijos/Subir.java"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JavaSourceNode">
+         <URL path="src/ActivosFijos/Bajar.java"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JavaSourceNode">
+         <URL path="src/ActivosFijos/BajarAction.java"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JavaSourceNode">
+         <URL path="src/ActivosFijos/UsuariosForm.java"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JavaSourceNode">
+         <URL path="src/ActivosFijos/RegionalesForm.java"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JavaSourceNode">
+         <URL path="src/ActivosFijos/UsuariosDetalleForm.java"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JavaSourceNode">
+         <URL path="src/ActivosFijos/Usuarios.java"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JavaSourceNode">
+         <URL path="src/ActivosFijos/UsuariosAction.java"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JspSourceNode">
+         <URL path="public_html/Usuarios.jsp"/>
+         <encoding>windows-1252</encoding>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JspSourceNode">
+         <URL path="public_html/Bajar.jsp"/>
+         <encoding>windows-1252</encoding>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JavaSourceNode">
+         <URL path="src/ActivosFijos/BajarForm.java"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JspSourceNode">
+         <URL path="public_html/footersubir.jsp"/>
+         <encoding>windows-1252</encoding>
+      </Item>
+      <Item class="oracle.ide.model.DeployableTextNode">
+         <URL path="public_html/conviertexls.vbs"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JavaSourceNode">
+         <URL path="src/ActivosFijos/ClaseEstructura2.java"/>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JspSourceNode">
+         <URL path="public_html/footerreportesinv.jsp"/>
+         <encoding>windows-1252</encoding>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JspSourceNode">
+         <URL path="public_html/Activos21.jsp"/>
+         <encoding>windows-1252</encoding>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JspSourceNode">
+         <URL path="public_html/DepreciacionesReportar.jsp"/>
+         <encoding>windows-1252</encoding>
+      </Item>
+      <Item class="oracle.jdeveloper.model.JavaSourceNode">
+         <URL path="src/aduana/app/struts/controller/CustomController.java"/>
+      </Item>
+      <Item class="oracle.ide.model.DeployableTextNode">
+         <URL path="public_html/Validaciones2.js"/>
+      </Item>
+   </listOfChildren>
+   <ownerMap/>
+   <projectDocPath>
+      <entries class="[Ljava.net.URL;"/>
+   </projectDocPath>
+   <projectLibraryList class="oracle.jdeveloper.library.JProjectLibraryList">
+      <jdkList class="java.util.ArrayList"/>
+      <libraryList class="java.util.ArrayList"/>
+   </projectLibraryList>
+   <projectSettings>
+      <activeConfigName>Development</activeConfigName>
+      <commonData class="java.util.HashMap">
+         <Item>
+            <Key>oracle.bm.commonIde.data.project.ModelerProjectSettings</Key>
+            <Value class="oracle.bm.commonIde.data.project.ModelerProjectSettings">
+               <modelersPath>
+                  <entries>
+                     <Item path="model/"/>
+                  </entries>
+               </modelersPath>
+            </Value>
+         </Item>
+         <Item>
+            <Key>oracle.jdeveloper.compiler.ant.AntConfiguration</Key>
+            <Value class="oracle.jdeveloper.compiler.ant.AntConfiguration">
+               <arguments class="java.lang.String"/>
+               <makeTarget/>
+               <projectBuildfile/>
+               <rebuildTarget/>
+               <showOutput>true</showOutput>
+            </Value>
+         </Item>
+      </commonData>
+      <configurations class="java.util.TreeMap">
+         <Item>
+            <Key>Development</Key>
+            <Value class="oracle.jdeveloper.model.JProjectConfiguration">
+               <configData class="java.util.HashMap">
+                  <Item>
+                     <Key>oracle.jdeveloper.compiler.OjcConfiguration</Key>
+                     <Value class="oracle.jdeveloper.compiler.OjcConfiguration">
+                        <assertionsEnabled>false</assertionsEnabled>
+                        <copyRes>
+                           <Item>.gif</Item>
+                           <Item>.properties</Item>
+                           <Item>.jpg</Item>
+                           <Item>.jpeg</Item>
+                           <Item>.xml</Item>
+                           <Item>-apf.xml</Item>
+                        </copyRes>
+                        <currentEncoding>Cp1252</currentEncoding>
+                        <debugInformation>true</debugInformation>
+                        <excludedClasses class="[Ljava.lang.String;"/>
+                        <obfuscate>false</obfuscate>
+                        <showCompileProgress>false</showCompileProgress>
+                        <showDeprecations>true</showDeprecations>
+                        <showObjectDotStaticWarnings>false</showObjectDotStaticWarnings>
+                        <showPartialImportWarnings>false</showPartialImportWarnings>
+                        <showSelfDeprecations>true</showSelfDeprecations>
+                        <showUnusedImportWarnings>false</showUnusedImportWarnings>
+                        <showWarnings>true</showWarnings>
+                        <target>Default</target>
+                        <updateImports>false</updateImports>
+                        <updateZipJarImports>false</updateZipJarImports>
+                     </Value>
+                  </Item>
+                  <Item>
+                     <Key>oracle.jdeveloper.javadoc.JProjectJavadoc</Key>
+                     <Value class="oracle.jdeveloper.javadoc.JProjectJavadoc">
+                        <generateAuthor>false</generateAuthor>
+                        <generateDeprecated>true</generateDeprecated>
+                        <generateIndex>true</generateIndex>
+                        <generateNavbar>true</generateNavbar>
+                        <generateSince>true</generateSince>
+                        <generateTree>true</generateTree>
+                        <generateVersion>false</generateVersion>
+                        <heapSize>32</heapSize>
+                        <miscOptions class="java.lang.String"/>
+                        <oneOneFormat>false</oneOneFormat>
+                        <outputDirectory path="javadoc/"/>
+                        <scope>-protected</scope>
+                     </Value>
+                  </Item>
+                  <Item>
+                     <Key>oracle.jdeveloper.runner.RunConfiguration</Key>
+                     <Value class="oracle.jdeveloper.runner.RunConfiguration">
+                        <VMName>ojvm</VMName>
+                        <allowInput>false</allowInput>
+                        <alwaysUseTarget>false</alwaysUseTarget>
+                        <clearLogBeforeRun>false</clearLogBeforeRun>
+                        <compileBeforeRun>true</compileBeforeRun>
+                        <connectionName/>
+                        <javaOptions class="java.lang.String"/>
+                        <logCommand>true</logCommand>
+                        <logError>true</logError>
+                        <logExit>true</logExit>
+                        <logOutput>true</logOutput>
+                        <programArguments class="java.lang.String"/>
+                        <runActiveFile>true</runActiveFile>
+                        <runDirectoryURL/>
+                        <targetURL path="public_html/index.htm"/>
+                        <useProxy>true</useProxy>
+                     </Value>
+                  </Item>
+                  <Item>
+                     <Key>oracle.jdevimpl.config.JProjectLibraries</Key>
+                     <Value class="oracle.jdevimpl.config.JProjectLibraries">
+                        <jdkName>1.3.1_02</jdkName>
+                        <jdkVersionNumber>1.3.1_02</jdkVersionNumber>
+                        <libraries>JDeveloper Runtime;JSP Runtime;Struts Runtime;Servlet Runtime;JasperReport;jakarta-struts;Oracle JDBC;Oracle SOAP</libraries>
+                     </Value>
+                  </Item>
+                  <Item>
+                     <Key>oracle.jdevimpl.config.JProjectPaths</Key>
+                     <Value class="oracle.jdevimpl.config.JProjectPaths">
+                        <additionalClassPath>
+                           <entries>
+                              <Item path="public_html/WEB-INF/lib/commons-beanutils.jar" jar-entry=""/>
+                              <Item path="public_html/WEB-INF/lib/commons-collections.jar" jar-entry=""/>
+                              <Item path="public_html/WEB-INF/lib/commons-dbcp.jar" jar-entry=""/>
+                              <Item path="public_html/WEB-INF/lib/commons-digester.jar" jar-entry=""/>
+                              <Item path="public_html/WEB-INF/lib/commons-fileupload.jar" jar-entry=""/>
+                              <Item path="public_html/WEB-INF/lib/commons-lang.jar" jar-entry=""/>
+                              <Item path="public_html/WEB-INF/lib/commons-logging.jar" jar-entry=""/>
+                              <Item path="public_html/WEB-INF/lib/commons-pool.jar" jar-entry=""/>
+                              <Item path="public_html/WEB-INF/lib/commons-resources.jar" jar-entry=""/>
+                              <Item path="public_html/WEB-INF/lib/commons-services.jar" jar-entry=""/>
+                              <Item path="public_html/WEB-INF/lib/commons-validator.jar" jar-entry=""/>
+                              <Item path="public_html/WEB-INF/lib/jakarta-oro.jar" jar-entry=""/>
+                              <Item path="public_html/WEB-INF/lib/struts.jar" jar-entry=""/>
+                              <Item path="public_html/WEB-INF/lib/antlr.jar" jar-entry=""/>
+                              <Item path="public_html/WEB-INF/lib/jxl.jar" jar-entry=""/>
+                           </entries>
+                        </additionalClassPath>
+                        <outputDirectory path="classes/"/>
+                     </Value>
+                  </Item>
+                  <Item>
+                     <Key>oracle.jdevimpl.idl.config.IdlConfiguration</Key>
+                     <Value class="oracle.jdevimpl.idl.config.IdlConfiguration">
+                        <codeForIncludedFiles>false</codeForIncludedFiles>
+                        <noBindMethods>false</noBindMethods>
+                        <noComments>false</noComments>
+                        <noExampleCode>false</noExampleCode>
+                        <noSkeletonCode>false</noSkeletonCode>
+                        <noStubCode>false</noStubCode>
+                        <noTieCode>false</noTieCode>
+                        <noToString>false</noToString>
+                        <objectWrapper>false</objectWrapper>
+                        <packageName class="java.lang.String"/>
+                     </Value>
+                  </Item>
+                  <Item>
+                     <Key>oracle.jdevimpl.runner.codecoach.CCConfiguration</Key>
+                     <Value class="oracle.jdevimpl.runner.codecoach.CCConfiguration">
+                        <advices>ALL</advices>
+                        <exclude>com;java;javax;sun;sunw;org;oracle</exclude>
+                        <include class="java.lang.String"/>
+                        <level>4</level>
+                     </Value>
+                  </Item>
+                  <Item>
+                     <Key>oracle.jdevimpl.runner.debug.DebugConfiguration</Key>
+                     <Value class="oracle.jdevimpl.runner.debug.DebugConfiguration">
+                        <JPDAClassicDebugArguments>-Xdebug -Xnoagent -Djava.compiler=NONE -Xrunjdwp:transport=dt_socket,server=y,address=&lt;port></JPDAClassicDebugArguments>
+                        <JPDADebugArguments>-Xdebug -Xrunjdwp:transport=dt_socket,server=y,address=&lt;port></JPDADebugArguments>
+                        <OJVMDebugArguments>-XXdebug,quiet,port&lt;port></OJVMDebugArguments>
+                        <breakpointScope>workspace</breakpointScope>
+                        <remoteDebugging>false</remoteDebugging>
+                        <remoteDebuggingParameters class="java.util.HashMap"/>
+                        <remoteDebuggingParametersSaved>false</remoteDebuggingParametersSaved>
+                        <remoteDebuggingProtocol>ojvm</remoteDebuggingProtocol>
+                        <startOption>running</startOption>
+                        <tracingDisabled>java;javax;sun;sunw;com.sun;org.xml.sax</tracingDisabled>
+                        <tracingEnabled class="java.lang.String"/>
+                     </Value>
+                  </Item>
+                  <Item>
+                     <Key>oracle.jdevimpl.runner.profile.ProfileConfiguration</Key>
+                     <Value class="oracle.jdevimpl.runner.profile.ProfileConfiguration">
+                        <DMSstartID>20000</DMSstartID>
+                        <DMSstate>0</DMSstate>
+                        <eventColumnVisible>
+                           <Item>true</Item>
+                           <Item>true</Item>
+                           <Item>true</Item>
+                           <Item>true</Item>
+                           <Item>true</Item>
+                           <Item>true</Item>
+                        </eventColumnVisible>
+                        <events>G(All events;(G(VM Events;(E(0;GC;-16776961;1);E(10;Wait;-65485;0);E(11;Synch Blocks 0;-39322;0);E(12;Synch Blocks 1;-39322;0);E(13;Synch Blocks 2;-39322;0);E(20;Prepare Class;-16751002;0);E(21;Load Class;-16724992;0);E(22;Resolve Class;-16737997;0);));G(BC4J Events;(E(1000;JBO_MISCELLANEOUS;-4144960;1);E(1001;JDBC_SELECT;-256;1);E(1002;JDBC_CREATE_STATEMENT;-256;1);E(1003;JDBC_CONNECT;-256;1);E(1004;JDBC_CREATE_PREPARED_STATEMENT;-256;1);E(1005;JDBC_EXECUTE;-256;1);E(1006;METAOBJECT_LOAD;-65281;1);E(1007;EXECUTE_QUERY;-16776961;1);E(1008;BC4J_CREATE_COMPOBJ;-65281;0);E(1009;BC4J_CREATE_ROOTAM;-65281;1);E(1010;BC4J_CREATE_VIEWOBJECT;-65281;0);E(1011;BC4J_CREATE_AM;-65281;0);E(1012;BC4J_CREATE_VIEWLINK;-65281;0);E(1013;SQLB_DOENTITYDML;-16776961;1);E(1014;SQLB_DOENTITYSELECT;-16776961;1);E(1015;VIEWOBJECT_GETSTATEMENT;-16776961;1);E(1016;REMOTE_METHOD_CALL;-65536;1);));));</events>
+                        <excludedClasses>java;javax;sun;sunw;com;oracle</excludedClasses>
+                        <excludedInstances class="java.lang.String"/>
+                        <includedClasses class="java.lang.String"/>
+                        <includedInstances class="java.lang.String"/>
+                        <localProfiling>true</localProfiling>
+                        <memColumnVisible>
+                           <Item>true</Item>
+                           <Item>true</Item>
+                           <Item>true</Item>
+                           <Item>true</Item>
+                           <Item>true</Item>
+                           <Item>true</Item>
+                           <Item>true</Item>
+                           <Item>true</Item>
+                           <Item>true</Item>
+                           <Item>true</Item>
+                        </memColumnVisible>
+                        <memoryUpdateInterval>10</memoryUpdateInterval>
+                        <remoteHost class="java.lang.String"/>
+                        <remoteParametersSaved>false</remoteParametersSaved>
+                        <remotePort>4000</remotePort>
+                        <sampleColumnVisible>
+                           <Item>true</Item>
+                           <Item>true</Item>
+                           <Item>true</Item>
+                           <Item>true</Item>
+                           <Item>true</Item>
+                           <Item>true</Item>
+                           <Item>true</Item>
+                        </sampleColumnVisible>
+                        <sampleInterval>5</sampleInterval>
+                        <sliderDepth>20</sliderDepth>
+                        <useAPI>false</useAPI>
+                     </Value>
+                  </Item>
+                  <Item>
+                     <Key>oracle.jdevimpl.sqlj.config.SqljConfiguration</Key>
+                     <Value class="oracle.jdevimpl.sqlj.config.SqljConfiguration">
+                        <checkSemantics>false</checkSemantics>
+                        <codegen>oracle</codegen>
+                        <contextConnectionMap class="java.util.HashMap"/>
+                        <useCache>false</useCache>
+                        <warnAll>false</warnAll>
+                        <warnNull>false</warnNull>
+                        <warnPortable>false</warnPortable>
+                        <warnPrecision>false</warnPrecision>
+                        <warnStrict>false</warnStrict>
+                        <warnVerbose>false</warnVerbose>
+                     </Value>
+                  </Item>
+                  <Item>
+                     <Key>WebappJspCompilerOptions</Key>
+                     <Value class="oracle.jdevimpl.webapp.jsp.JspCompilerOptions">
+                        <forgiveDuplicateDirectiveAttributes>false</forgiveDuplicateDirectiveAttributes>
+                        <requestTimeIntrospection>false</requestTimeIntrospection>
+                        <validate>true</validate>
+                     </Value>
+                  </Item>
+               </configData>
+            </Value>
+         </Item>
+      </configurations>
+   </projectSettings>
+   <projectSourcePath>
+      <entries>
+         <Item path="src/"/>
+         <Item path="../SistemaActivos2/src/"/>
+      </entries>
+   </projectSourcePath>
+   <properties class="java.util.HashMap">
+      <Item>
+         <Key>CachedConfigTable</Key>
+         <Value class="oracle.jsp.parse.CachedConfigTable"/>
+      </Item>
+      <Item>
+         <Key>useDefaultPackage</Key>
+         <Value>true</Value>
+      </Item>
+   </properties>
+   <userAuthor/>
+   <userCompany/>
+   <userCopyright/>
+   <userDescription/>
+   <userTitle/>
+   <userVersion/>
+</project>

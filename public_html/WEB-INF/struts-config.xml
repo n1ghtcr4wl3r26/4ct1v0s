@@ -1,0 +1,694 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<struts-config>
+ <form-beans>
+  <form-bean name="InicioForm" type="ActivosFijos.InicioForm"/>
+  <form-bean name="AltasForm" type="ActivosFijos.AltasForm"/>
+  <form-bean name="BajasForm" type="ActivosFijos.BajasForm"/>
+  <form-bean name="FinanciadoresForm" type="ActivosFijos.FinanciadoresForm"/>
+  <form-bean name="FuncionariosForm" type="ActivosFijos.FuncionariosForm"/>
+  <form-bean name="GruposForm" type="ActivosFijos.GruposForm"/>
+  <form-bean name="OficinasForm" type="ActivosFijos.OficinasForm"/>
+  <form-bean name="PartidasForm" type="ActivosFijos.PartidasForm"/>
+  <form-bean name="ProyectosForm" type="ActivosFijos.ProyectosForm"/>
+  <form-bean name="RegionalesForm" type="ActivosFijos.RegionalesForm"/>
+  <form-bean name="RubrosForm" type="ActivosFijos.RubrosForm"/>
+  <form-bean name="SecbarrasForm" type="ActivosFijos.SecbarrasForm"/>
+  <form-bean name="SectiposdocForm" type="ActivosFijos.SectiposdocForm"/>
+  <form-bean name="TipocambioForm" type="ActivosFijos.TipocambioForm"/>
+  <form-bean name="TiposbajaForm" type="ActivosFijos.TiposbajaForm"/>
+  <form-bean name="TiposdocForm" type="ActivosFijos.TiposdocForm"/>
+  <form-bean name="UbicacionesForm" type="ActivosFijos.UbicacionesForm"/>
+  <form-bean name="PasswordForm" type="ActivosFijos.PasswordForm"/>
+  <form-bean name="/pass" type="ActivosFijos.Password"/>
+  <form-bean name="ReportesForm" type="ActivosFijos.ReportesForm"/>
+  <form-bean name="AccesoriosForm" type="ActivosFijos.AccesoriosForm"/>
+  <form-bean name="ActivosForm" type="ActivosFijos.ActivosForm"/>
+  <form-bean name="MejorasRebajasForm" type="ActivosFijos.MejorasRebajasForm"/>
+  <form-bean name="RevaluosForm" type="ActivosFijos.RevaluosForm"/>  
+  <form-bean name="DocumentosForm" type="ActivosFijos.DocumentosForm"/>  
+  <form-bean name="DetDocumenosForm" type="ActivosFijos.DetDocumentosForm"/>  
+  <form-bean name="DepreciacionesForm" type="ActivosFijos.DepreciacionesForm"/>    
+  <form-bean name="InventariosForm" type="ActivosFijos.InventariosForm"/>
+  <form-bean name="ParametrosForm" type="ActivosFijos.ParametrosForm"/>  
+  <form-bean name="SubirForm" type="ActivosFijos.SubirForm"/>  
+  <form-bean name="BajarForm" type="ActivosFijos.BajarForm"/>  
+  <form-bean name="UsuariosForm" type="ActivosFijos.UsuariosForm"/>
+ </form-beans>
+ <action-mappings>
+  <action path="/pedirclave" name="InicioForm" type="ActivosFijos.InicioAction" parameter="cam" scope="session">
+   <forward name="volver" path="CambioClave.jsp"/>
+  </action>
+  <action path="/salir" name="InicioForm" type="ActivosFijos.InicioAction" parameter="salir" scope="session">
+   <forward name="volver" path="Inicio.jsp"/>
+  </action>
+  <action path="/inicio" name="InicioForm" type="ActivosFijos.InicioAction" parameter="con" scope="session">
+   <forward name="volver" path="Inicio.jsp"/>
+   <forward name="regional" path="pedirregional.jsp"/>   
+   <forward name="cambio" path="CambioClave.jsp"/>
+   <forward name="menu" path="pagina.menu"/>
+  </action>
+  <action path="/index" name="InicioForm" type="ActivosFijos.ActionIndex">
+   <forward name="login" path="pagina.login"/>
+  </action>
+  <action path="/pedirregional" name="InicioForm" type="ActivosFijos.PedirRegional" scope="session">
+   <forward name="volver" path="pedirregional.jsp"/>
+   <forward name="menu" path="pagina.menu"/>
+  </action>
+  <action path="/paginamenu" type="ActivosFijos.PaginaMenu" scope="session">
+   <forward name="menu" path="pagina.menu"/>
+  </action>
+
+  <action path="/accesoriosAction" name="AccesoriosForm" type="ActivosFijos.AccesoriosAction" scope="request">
+   <forward name="volver" path="pagina.accesorios"/>
+  </action>
+  <action path="/activosAction" name="ActivosForm" type="ActivosFijos.ActivosAction" scope="request">
+   <forward name="volver" path="pagina.activos"/>
+   <forward name="volver1" path="pagina.activos1"/>
+   <forward name="volver2" path="pagina.activos2"/>
+   <forward name="volver21" path="pagina.activos21"/>
+   <forward name="volver3" path="pagina.activos3"/>
+   <forward name="volver4" path="pagina.activos4"/>
+   <forward name="volver10" path="pagina.activos10"/>
+   <forward name="volver11" path="pagina.activos11"/>
+   <forward name="volver12" path="pagina.activos12"/>
+   <forward name="volver13" path="pagina.activos13"/>
+   <forward name="volver14" path="pagina.activos14"/>
+   <forward name="volver10A" path="pagina.activos10A"/>
+   <forward name="volver11A" path="pagina.activos11A"/>
+   <forward name="volver12A" path="pagina.activos12A"/>
+   <forward name="volver13A" path="pagina.activos13A"/>
+   <forward name="volver14A" path="pagina.activos14A"/>
+   <forward name="volver10B" path="pagina.activos10B"/>
+   <forward name="volver11B" path="pagina.activos11B"/>
+   <forward name="volver12B" path="pagina.activos12B"/>
+   <forward name="volver13B" path="pagina.activos13B"/>
+   <forward name="volver14B" path="pagina.activos14B"/>
+  </action>
+  <action path="/depreciacionesAction" name="DepreciacionesForm" type="ActivosFijos.DepreciacionesAction" scope="request">
+   <forward name="volver" path="pagina.depreciaciones"/>
+   <forward name="reportar" path="pagina.reportedepreciaciones"/>   
+  </action>
+
+  <action path="/reporteactivosAction" name="ReportesForm" type="ActivosFijos.ReportesAction" scope="request">
+   <forward name="volver" path="pagina.reportes"/>
+   <forward name="volverpdf" path="pagina.reportespdf"/>
+  </action>
+
+  <action path="/reportesAction" name="ReportesForm" type="ActivosFijos.ReportesAction" scope="request">
+   <forward name="volver" path="pagina.reportes"/>
+   <forward name="reportar" path="pagina.reportegeneral"/>   
+  </action>
+  <action path="/reportesAction" name="ReportesForm" type="ActivosFijos.ReportesAction" scope="request">
+   <forward name="volver" path="pagina.reportes"/>
+   <forward name="reportar" path="pagina.reporteporbien"/>   
+  </action>
+  <action path="/reportesAction" name="ReportesForm" type="ActivosFijos.ReportesAction" scope="request">
+   <forward name="volver" path="pagina.reportes"/>
+   <forward name="reportar" path="pagina.reporteporactivo"/>   
+  </action>
+  <action path="/reportesAction" name="ReportesForm" type="ActivosFijos.ReportesAction" scope="request">
+   <forward name="volver" path="pagina.reportes"/>
+   <forward name="reportar" path="pagina.reporteporrango"/>   
+  </action>
+  <action path="/reportesAction" name="ReportesForm" type="ActivosFijos.ReportesAction" scope="request">
+   <forward name="volver" path="pagina.reportes"/>
+   <forward name="reportar" path="pagina.reporteporubicacion"/>   
+  </action>
+  <action path="/reportesAction" name="ReportesForm" type="ActivosFijos.ReportesAction" scope="request">
+   <forward name="volver" path="pagina.reportes"/>
+   <forward name="reportar" path="pagina.reportepormovimiento"/>   
+  </action>
+  <action path="/documentosAction" name="DocumentosForm" type="ActivosFijos.DocumentosAction" scope="request">
+   <forward name="volver" path="pagina.documentos"/>
+   <forward name="reportar" path="pagina.reportedocumentos"/>
+  </action>
+  <action path="/inventariosAction" name="InventariosForm" type="ActivosFijos.InventariosAction" scope="request">
+   <forward name="volver" path="pagina.inventarios"/>
+  </action>
+  <action path="/mejorasrebajasAction" name="MejorasRebajasForm" type="ActivosFijos.MejorasRebajasAction" scope="request">
+   <forward name="volver" path="pagina.mejorasrebajas"/>
+  </action>
+  <action path="/revaluosAction" name="RevaluosForm" type="ActivosFijos.RevaluosAction" scope="request">
+   <forward name="volver" path="pagina.revaluos"/>
+  </action>
+  <action path="/parametrosAction" name="ParametrosForm" type="ActivosFijos.ParametrosAction" scope="request">
+   <forward name="volver" path="pagina.parametros"/>
+  </action>
+  <action path="/subirAction" name="SubirForm" type="ActivosFijos.SubirAction" scope="request">
+   <forward name="volver" path="pagina.subir"/>
+  </action>
+  <action path="/bajarAction" name="BajarForm" type="ActivosFijos.BajarAction" scope="request">
+   <forward name="volver" path="pagina.bajar"/>
+  </action>
+
+  <action path="/financiadoresAction" name="FinanciadoresForm" type="ActivosFijos.FinanciadoresAction" scope="request">
+   <forward name="volver" path="pagina.financiadores"/>
+  </action>
+  <action path="/funcionariosAction" name="FuncionariosForm" type="ActivosFijos.FuncionariosAction" scope="request">
+   <forward name="volver" path="pagina.funcionarios"/>
+  </action>
+  <action path="/gruposAction" name="GruposForm" type="ActivosFijos.GruposAction" scope="request">
+   <forward name="volver" path="pagina.grupos"/>
+  </action>
+  <action path="/oficinasAction" name="OficinasForm" type="ActivosFijos.OficinasAction" scope="request">
+   <forward name="volver" path="pagina.oficinas"/>
+  </action>
+  <action path="/partidasAction" name="PartidasForm" type="ActivosFijos.PartidasAction" scope="request">
+   <forward name="volver" path="pagina.partidas"/>
+  </action>
+  <action path="/proyectosAction" name="ProyectosForm" type="ActivosFijos.ProyectosAction" scope="request">
+   <forward name="volver" path="pagina.proyectos"/>
+  </action>
+  <action path="/regionalesAction" name="RegionalesForm" type="ActivosFijos.RegionalesAction" scope="request">
+   <forward name="volver" path="pagina.regionales"/>
+  </action>
+  <action path="/usuariosAction" name="UsuariosForm" type="ActivosFijos.UsuariosAction" scope="request">
+   <forward name="volver" path="pagina.usuarios"/>
+  </action>
+  <action path="/rubrosAction" name="RubrosForm" type="ActivosFijos.RubrosAction" scope="request">
+   <forward name="volver" path="pagina.rubros"/>
+  </action>
+  <action path="/secbarrasAction" name="SecbarrasForm" type="ActivosFijos.SecbarrasAction" scope="request">
+   <forward name="volver" path="pagina.secbarras"/>
+  </action>
+  <action path="/sectiposdocAction" name="SectiposdocForm" type="ActivosFijos.SectiposdocAction" scope="request">
+   <forward name="volver" path="pagina.sectiposdoc"/>
+  </action>
+  <action path="/tipocambioAction" name="TipocambioForm" type="ActivosFijos.TipocambioAction" scope="request">
+   <forward name="volver" path="pagina.tipocambio"/>
+  </action>
+  <action path="/tiposbajaAction" name="TiposbajaForm" type="ActivosFijos.TiposbajaAction" scope="request">
+   <forward name="volver" path="pagina.tiposbaja"/>
+  </action>
+  <action path="/tiposdocAction" name="TiposdocForm" type="ActivosFijos.TiposdocAction" scope="request">
+   <forward name="volver" path="pagina.tiposdoc"/>
+  </action>
+  <action path="/ubicacionesAction" name="UbicacionesForm" type="ActivosFijos.UbicacionesAction" scope="request">
+   <forward name="volver" path="pagina.ubicaciones"/>
+  </action>
+  <action path="/bajas" type="ActivosFijos.Bajas">
+   <forward name="bajas" path="pagina.bajas"/>
+  </action>
+
+  <action path="/activos" type="ActivosFijos.Activos" name="ActivosForm" parameter="ins" scope="request">
+   <forward name="activos" path="pagina.activos"/>
+   <forward name="activos10" path="pagina.activos10"/>
+  </action>  
+  <action path="/insertaractivos" type="ActivosFijos.Activos" name="ActivosForm" parameter="ins" scope="request">
+   <forward name="activos" path="pagina.activos"/>
+  </action>
+  <action path="/modificaractivos" type="ActivosFijos.Activos" name="ActivosForm" parameter="mod" scope="request">
+   <forward name="activos10" path="pagina.activos10"/>
+  </action>
+  <action path="/eliminaractivos" type="ActivosFijos.Activos" name="ActivosForm" parameter="eli" scope="request">
+   <forward name="activos10" path="pagina.activos10"/>
+  </action>
+  <action path="/consultaractivos" type="ActivosFijos.Activos" name="ActivosForm" parameter="con" scope="request">
+   <forward name="activos10" path="pagina.activos10"/>
+  </action>
+  
+  <action path="/accesorios" type="ActivosFijos.Accesorios" name="AccesoriosForm" parameter="ins" scope="request">
+   <forward name="accesorios" path="pagina.accesorios"/>
+  </action>  
+  <action path="/insertaraccesorios" type="ActivosFijos.Accesorios" name="AccesoriosForm" parameter="ins" scope="request">
+   <forward name="accesorios" path="pagina.accesorios"/>
+  </action>
+  <action path="/modificaraccesorios" type="ActivosFijos.Accesorios" name="AccesoriosForm" parameter="mod" scope="request">
+   <forward name="accesorios" path="pagina.accesorios"/>
+  </action>
+  <action path="/eliminaraccesorios" type="ActivosFijos.Accesorios" name="AccesoriosForm" parameter="eli" scope="request">
+   <forward name="accesorios" path="pagina.accesorios"/>
+  </action>
+  
+  <action path="/depreciaciones" type="ActivosFijos.Depreciaciones" name="DepreciacionesForm" parameter="gen" scope="request">
+   <forward name="depreciaciones" path="pagina.depreciaciones"/>
+  </action>  
+  <action path="/generardepreciaciones" type="ActivosFijos.Depreciaciones" name="DepreciacionesForm" parameter="gen" scope="request">
+   <forward name="depreciaciones" path="pagina.depreciacionesgen"/>
+  </action>
+
+  <action path="/reportardepreciaciones" type="ActivosFijos.Depreciaciones" name="DepreciacionesForm" parameter="rep" scope="request">
+   <forward name="depreciaciones" path="pagina.reportardepreciaciones"/>
+  </action>
+  <action path="/consultardepreciaciones" type="ActivosFijos.Depreciaciones" name="DepreciacionesForm" parameter="gen" scope="request">
+   <forward name="depreciaciones" path="pagina.depreciacionesreportar"/>
+  </action>
+
+  <action path="/reportes" type="ActivosFijos.Reportes" name="ReportesForm" parameter="rep" scope="request">
+   <forward name="reportes" path="pagina.reportes"/>
+  </action>  
+  <action path="/reporte1" type="ActivosFijos.Reportes" name="ReportesForm" parameter="rp1" scope="request">
+   <forward name="reportes" path="pagina.condicionesreportesactivos"/>
+  </action>
+  <action path="/reporte2" type="ActivosFijos.Reportes" name="ReportesForm" parameter="rp2" scope="request">
+   <forward name="reportes" path="pagina.condicionesreportesactivos"/>
+  </action>
+  <action path="/reporte3" type="ActivosFijos.Reportes" name="ReportesForm" parameter="rp3" scope="request">
+   <forward name="reportes" path="pagina.condicionesreportesactivos"/>
+  </action>
+  <action path="/reporte4" type="ActivosFijos.Reportes" name="ReportesForm" parameter="rp4" scope="request">
+   <forward name="reportes" path="pagina.condicionesreportesactivos"/>
+  </action>
+  <action path="/reporte5" type="ActivosFijos.Reportes" name="ReportesForm" parameter="rp5" scope="request">
+   <forward name="reportes" path="pagina.condicionesreportesactivos"/>
+  </action>
+  <action path="/reporte6" type="ActivosFijos.Reportes" name="ReportesForm" parameter="rp6" scope="request">
+   <forward name="reportes" path="pagina.condicionesreportesactivos"/>
+  </action>
+  <action path="/reporte7" type="ActivosFijos.Reportes" name="ReportesForm" parameter="rp7" scope="request">
+   <forward name="reportes" path="pagina.condicionesreportesactivos"/>
+  </action>
+  <action path="/reporte8" type="ActivosFijos.Reportes" name="ReportesForm" parameter="rp8" scope="request">
+   <forward name="reportes" path="pagina.condicionesreportesactivos"/>
+  </action>
+  <action path="/reporte9" type="ActivosFijos.Reportes" name="ReportesForm" parameter="rp9" scope="request">
+   <forward name="reportes" path="pagina.condicionesreportesactivos"/>
+  </action>
+  <action path="/reporte10" type="ActivosFijos.Reportes" name="ReportesForm" parameter="rp10" scope="request">
+   <forward name="reportes" path="pagina.condicionesreportesactivos"/>
+  </action>
+  <action path="/reporte11" type="ActivosFijos.Reportes" name="ReportesForm" parameter="rp11" scope="request">
+   <forward name="reportes" path="pagina.condicionesreportesactivos"/>
+  </action>
+  <action path="/reporte12" type="ActivosFijos.Reportes" name="ReportesForm" parameter="rp12" scope="request">
+   <forward name="reportes" path="pagina.condicionesreportesactivos"/>
+  </action>
+  <action path="/reporte18" type="ActivosFijos.Reportes" name="ReportesForm" parameter="rp18" scope="request">
+   <forward name="reportes" path="pagina.condicionesreportesactivos"/>
+  </action>
+  <action path="/reporte19" type="ActivosFijos.Reportes" name="ReportesForm" parameter="rp19" scope="request">
+   <forward name="reportes" path="pagina.condicionesreportesactivos"/>
+  </action>  
+  <action path="/reporte13" type="ActivosFijos.Reportes" name="ReportesForm" parameter="rp13" scope="request">
+   <forward name="reportes" path="pagina.condicionesreportesinve"/>
+  </action>
+  <action path="/reporte14" type="ActivosFijos.Reportes" name="ReportesForm" parameter="rp14" scope="request">
+   <forward name="reportes" path="pagina.condicionesreportesinve"/>
+  </action>
+  <action path="/reporte15" type="ActivosFijos.Reportes" name="ReportesForm" parameter="rp15" scope="request">
+   <forward name="reportes" path="pagina.condicionesreportesinve"/>
+  </action>
+  <action path="/reporte16" type="ActivosFijos.Reportes" name="ReportesForm" parameter="rp16" scope="request">
+   <forward name="reportes" path="pagina.condicionesreportesinve"/>
+  </action>
+  <action path="/reporte17" type="ActivosFijos.Reportes" name="ReportesForm" parameter="rp17" scope="request">
+   <forward name="reportes" path="pagina.condicionesreportesinve"/>
+  </action>
+  
+  <action path="/reportesdep" type="ActivosFijos.Reportes" name="ReportesForm" parameter="rep" scope="request">
+   <forward name="reportes" path="pagina.reportesdep"/>
+  </action>  
+
+  <action path="/reportedep1" type="ActivosFijos.Reportes" name="ReportesForm" parameter="rd1" scope="request">
+   <forward name="reportes" path="pagina.condicionesreportesdepre"/>
+  </action>
+  <action path="/reportedep2" type="ActivosFijos.Reportes" name="ReportesForm" parameter="rd2" scope="request">
+   <forward name="reportes" path="pagina.condicionesreportesdepre"/>
+  </action>
+  <action path="/reportedep3" type="ActivosFijos.Reportes" name="ReportesForm" parameter="rd3" scope="request">
+   <forward name="reportes" path="pagina.condicionesreportesdepre"/>
+  </action>
+  <action path="/reportedep4" type="ActivosFijos.Reportes" name="ReportesForm" parameter="rd4" scope="request">
+   <forward name="reportes" path="pagina.condicionesreportesdepre"/>
+  </action>
+  <action path="/reportedep5" type="ActivosFijos.Reportes" name="ReportesForm" parameter="rd5" scope="request">
+   <forward name="reportes" path="pagina.condicionesreportesdepre"/>
+  </action>
+  <action path="/reportedep6" type="ActivosFijos.Reportes" name="ReportesForm" parameter="rd6" scope="request">
+   <forward name="reportes" path="pagina.condicionesreportesdepre"/>
+  </action>
+  <action path="/reportedep7" type="ActivosFijos.Reportes" name="ReportesForm" parameter="rd7" scope="request">
+   <forward name="reportes" path="pagina.condicionesreportesdepre"/>
+  </action>
+  <action path="/reportedep8" type="ActivosFijos.Reportes" name="ReportesForm" parameter="rd8" scope="request">
+   <forward name="reportes" path="pagina.condicionesreportesdepre"/>
+  </action>
+  <action path="/reportedep9" type="ActivosFijos.Reportes" name="ReportesForm" parameter="rd9" scope="request">
+   <forward name="reportes" path="pagina.condicionesreportesdepre"/>
+  </action>
+  <action path="/reportedep10" type="ActivosFijos.Reportes" name="ReportesForm" parameter="rd10" scope="request">
+   <forward name="reportes" path="pagina.condicionesreportesdepre"/>
+  </action>
+  <action path="/reportedep11" type="ActivosFijos.Reportes" name="ReportesForm" parameter="rd11" scope="request">
+   <forward name="reportes" path="pagina.condicionesreportesdepre"/>
+  </action>  
+    <action path="/reportedep12" type="ActivosFijos.Reportes" name="ReportesForm" parameter="rd12" scope="request">
+   <forward name="reportes" path="pagina.condicionesreportesdepre"/>
+  </action>  
+  <action path="/reportemovimiento" type="ActivosFijos.Reportes" name="ReportesForm" parameter="rp6" scope="request">
+   <forward name="reportes" path="pagina.condicionesreportesactivos"/>
+  </action>
+  <action path="/reportemovimiento" type="ActivosFijos.Reportes" name="ReportesForm" parameter="rp7" scope="request">
+   <forward name="reportes" path="pagina.condicionesreportesactivos"/>
+  </action>
+  <action path="/reportemovimiento" type="ActivosFijos.Reportes" name="ReportesForm" parameter="rp8" scope="request">
+   <forward name="reportes" path="pagina.condicionesreportesactivos"/>
+  </action>
+  <action path="/reportemovimiento" type="ActivosFijos.Reportes" name="ReportesForm" parameter="rp9" scope="request">
+   <forward name="reportes" path="pagina.condicionesreportesactivos"/>
+  </action>
+  <action path="/reportemovimiento" type="ActivosFijos.Reportes" name="ReportesForm" parameter="rp10" scope="request">
+   <forward name="reportes" path="pagina.condicionesreportesactivos"/>
+  </action>
+  <action path="/reportemovimiento" type="ActivosFijos.Reportes" name="ReportesForm" parameter="rp11" scope="request">
+   <forward name="reportes" path="pagina.condicionesreportesactivos"/>
+  </action>
+  
+  <action path="/documentos" type="ActivosFijos.Documentos" name="DocumentosForm" parameter="ins" scope="request">
+   <forward name="documentos" path="pagina.documentos"/>
+  </action>  
+  <action path="/insertardocumentos" type="ActivosFijos.Documentos" name="DocumentosForm" parameter="ins" scope="request">
+   <forward name="documentos" path="pagina.documentos"/>
+  </action>
+  <action path="/modificardocumentos" type="ActivosFijos.Documentos" name="DocumentosForm" parameter="mod" scope="request">
+   <forward name="documentos" path="pagina.documentos"/>
+  </action>
+  <action path="/eliminardocumentos" type="ActivosFijos.Documentos" name="DocumentosForm" parameter="eli" scope="request">
+   <forward name="documentos" path="pagina.documentos"/>
+  </action>
+  <action path="/confirmardocumentos" type="ActivosFijos.Documentos" name="DocumentosForm" parameter="con" scope="request">
+   <forward name="documentos" path="pagina.documentos"/>
+  </action>
+  <action path="/reportardocumentos" type="ActivosFijos.Documentos" name="DocumentosForm" parameter="rep" scope="request">
+   <forward name="documentos" path="pagina.documentos"/>
+  </action>
+
+  <action path="/inventarios" type="ActivosFijos.Inventarios" name="InventariosForm" parameter="mod" scope="request">
+   <forward name="inventarios" path="pagina.inventarios"/>
+  </action>  
+  <action path="/insertarinventarios" type="ActivosFijos.Inventarios" name="InventariosForm" parameter="ins" scope="request">
+   <forward name="inventarios" path="pagina.inventarios"/>
+  </action>
+  <action path="/modificarinventarios" type="ActivosFijos.Inventarios" name="InventariosForm" parameter="mod" scope="request">
+   <forward name="inventarios" path="pagina.inventarios"/>
+  </action>
+  <action path="/eliminarinventarios" type="ActivosFijos.Inventarios" name="InventariosForm" parameter="eli" scope="request">
+   <forward name="inventarios" path="pagina.inventarios"/>
+  </action>
+  <action path="/generarinventarios" type="ActivosFijos.Inventarios" name="InventariosForm" parameter="gen" scope="request">
+   <forward name="inventarios" path="pagina.inventarios"/>
+  </action>
+  <action path="/reportarinventarios" type="ActivosFijos.Inventarios" name="InventariosForm" parameter="rep" scope="request">
+   <forward name="inventarios" path="pagina.reportarinventarios"/>
+  </action>  
+  <action path="/mejorasrebajas" type="ActivosFijos.MejorasRebajas" name="MejorasRebajasForm" parameter="ins" scope="request">
+   <forward name="mejorasrebajas" path="pagina.mejorasrebajas"/>
+  </action>  
+  <action path="/insertarmejorasrebajas" type="ActivosFijos.MejorasRebajas" name="MejorasRebajasForm" parameter="ins" scope="request">
+   <forward name="mejorasrebajas" path="pagina.mejorasrebajas"/>
+  </action>
+  <action path="/modificarmejorasrebajas" type="ActivosFijos.MejorasRebajas" name="MejorasRebajasForm" parameter="mod" scope="request">
+   <forward name="mejorasrebajas" path="pagina.mejorasrebajas"/>
+  </action>
+  <action path="/eliminarmejorasrebajas" type="ActivosFijos.MejorasRebajas" name="MejorasRebajasForm" parameter="eli" scope="request">
+   <forward name="mejorasrebajas" path="pagina.mejorasrebajas"/>
+  </action>
+  
+  <action path="/revaluos" type="ActivosFijos.Revaluos" name="RevaluosForm" parameter="ins" scope="request">
+   <forward name="revaluos" path="pagina.revaluos"/>
+  </action>  
+  <action path="/insertarrevaluos" type="ActivosFijos.Revaluos" name="RevaluosForm" parameter="ins" scope="request">
+   <forward name="revaluos" path="pagina.revaluos"/>
+  </action>
+  <action path="/modificarrevaluos" type="ActivosFijos.Revaluos" name="RevaluosForm" parameter="mod" scope="request">
+   <forward name="revaluos" path="pagina.revaluos"/>
+  </action>
+  <action path="/eliminarrevaluos" type="ActivosFijos.Revaluos" name="RevaluosForm" parameter="eli" scope="request">
+   <forward name="revaluos" path="pagina.revaluos"/>
+  </action>
+  <action path="/consultarrevaluos" type="ActivosFijos.Revaluos" name="RevaluosForm" parameter="con" scope="request">
+   <forward name="revaluos" path="pagina.revaluos"/>
+  </action>
+  
+  <action path="/referencias" type="ActivosFijos.ReferenciasAction" scope="request">
+   <forward name="referencias" path="pagina.referencias"/>
+  </action>  
+  
+  <action path="/parametros" type="ActivosFijos.Parametros" name="ParametrosForm" parameter="ins" scope="request">
+   <forward name="parametros" path="pagina.parametros"/>
+  </action>  
+  <action path="/insertarparametros" type="ActivosFijos.Parametros" name="ParametrosForm" parameter="ins" scope="request">
+   <forward name="parametros" path="pagina.parametros"/>
+  </action>
+  <action path="/modificarparametros" type="ActivosFijos.Parametros" name="ParametrosForm" parameter="mod" scope="request">
+   <forward name="parametros" path="pagina.parametros"/>
+  </action>
+  <action path="/eliminarparametros" type="ActivosFijos.Parametros" name="ParametrosForm" parameter="eli" scope="request">
+   <forward name="parametros" path="pagina.parametros"/>
+  </action>  
+
+  <action path="/subir" type="ActivosFijos.Subir" name="SubirForm" parameter="ins" scope="request">
+   <forward name="subir" path="pagina.subir"/>
+  </action>  
+  <action path="/subirinventario" type="ActivosFijos.Subir" name="SubirForm" parameter="ins" scope="request">
+   <forward name="subir" path="pagina.subir"/>
+  </action>
+  <action path="/bajartablas" type="ActivosFijos.Bajar" name="BajarForm" parameter="ins" scope="request">
+   <forward name="bajar" path="pagina.bajar"/>
+  </action>
+  
+  <action path="/financiadores" type="ActivosFijos.Financiadores" name="FinanciadoresForm" parameter="rep" scope="request">
+   <forward name="financiadores" path="pagina.financiadores"/>
+  </action>
+  <action path="/insertarfinanciadores" type="ActivosFijos.Financiadores" name="FinanciadoresForm" parameter="ins" scope="request">
+   <forward name="financiadores" path="pagina.financiadores"/>
+  </action>
+  <action path="/modificarfinanciadores" type="ActivosFijos.Financiadores" name="FinanciadoresForm" parameter="mod" scope="request">
+   <forward name="financiadores" path="pagina.financiadores"/>
+  </action>
+  <action path="/eliminarfinanciadores" type="ActivosFijos.Financiadores" name="FinanciadoresForm" parameter="eli" scope="request">
+   <forward name="financiadores" path="pagina.financiadores"/>
+  </action>
+  <action path="/reportarfinanciadores" type="ActivosFijos.Financiadores" name="FinanciadoresForm" parameter="rpt" scope="request">
+   <forward name="financiadores" path="pagina.reportefinanciadores"/>
+  </action>
+  <action path="/funcionarios" type="ActivosFijos.Funcionarios" name="FuncionariosForm" parameter="rep" scope="request">
+   <forward name="funcionarios" path="pagina.funcionarios"/>
+  </action>
+  <action path="/insertarfuncionarios" type="ActivosFijos.Funcionarios" name="FuncionariosForm" parameter="ins" scope="request">
+   <forward name="funcionarios" path="pagina.funcionarios"/>
+  </action>
+  <action path="/modificarfuncionarios" type="ActivosFijos.Funcionarios" name="FuncionariosForm" parameter="mod" scope="request">
+   <forward name="funcionarios" path="pagina.funcionarios"/>
+  </action>
+  <action path="/eliminarfuncionarios" type="ActivosFijos.Funcionarios" name="FuncionariosForm" parameter="eli" scope="request">
+   <forward name="funcionarios" path="pagina.funcionarios"/>
+  </action>
+  <action path="/reportarfuncionarios" type="ActivosFijos.Funcionarios" name="FuncionariosForm" parameter="rpt" scope="request">
+   <forward name="funcionarios" path="pagina.reportefuncionarios"/>
+  </action>
+  <action path="/grupos" type="ActivosFijos.Grupos" name="GruposForm" parameter="rep" scope="request">
+   <forward name="grupos" path="pagina.grupos"/>
+  </action>
+  <action path="/insertargrupos" type="ActivosFijos.Grupos" name="GruposForm" parameter="ins" scope="request">
+   <forward name="grupos" path="pagina.grupos"/>
+  </action>
+  <action path="/modificargrupos" type="ActivosFijos.Grupos" name="GruposForm" parameter="mod" scope="request">
+   <forward name="grupos" path="pagina.grupos"/>
+  </action>
+  <action path="/eliminargrupos" type="ActivosFijos.Grupos" name="GruposForm" parameter="eli" scope="request">
+   <forward name="grupos" path="pagina.grupos"/>
+  </action>
+  <action path="/reportargrupos" type="ActivosFijos.Grupos" name="GruposForm" parameter="rpt" scope="request">
+   <forward name="grupos" path="pagina.reportegrupos"/>
+  </action>
+  <action path="/oficinas" type="ActivosFijos.Oficinas" name="OficinasForm" parameter="rep" scope="request">
+   <forward name="oficinas" path="pagina.oficinas"/>
+  </action>
+  <action path="/insertaroficinas" type="ActivosFijos.Oficinas" name="OficinasForm" parameter="ins" scope="request">
+   <forward name="oficinas" path="pagina.oficinas"/>
+  </action>
+  <action path="/modificaroficinas" type="ActivosFijos.Oficinas" name="OficinasForm" parameter="mod" scope="request">
+   <forward name="oficinas" path="pagina.oficinas"/>
+  </action>
+  <action path="/eliminaroficinas" type="ActivosFijos.Oficinas" name="OficinasForm" parameter="eli" scope="request">
+   <forward name="oficinas" path="pagina.oficinas"/>
+  </action>
+  <action path="/reportaroficinas" type="ActivosFijos.Oficinas" name="OficinasForm" parameter="rpt" scope="request">
+   <forward name="oficinas" path="pagina.reporteoficinas"/>
+  </action>
+  <action path="/partidas" type="ActivosFijos.Partidas" name="PartidasForm" parameter="rep" scope="request">
+   <forward name="partidas" path="pagina.partidas"/>
+  </action>
+  <action path="/insertarpartidas" type="ActivosFijos.Partidas" name="PartidasForm" parameter="ins" scope="request">
+   <forward name="partidas" path="pagina.partidas"/>
+  </action>
+  <action path="/modificarpartidas" type="ActivosFijos.Partidas" name="PartidasForm" parameter="mod" scope="request">
+   <forward name="partidas" path="pagina.partidas"/>
+  </action>
+  <action path="/eliminarpartidas" type="ActivosFijos.Partidas" name="PartidasForm" parameter="eli" scope="request">
+   <forward name="partidas" path="pagina.partidas"/>
+  </action>
+  <action path="/reportarpartidas" type="ActivosFijos.Partidas" name="PartidasForm" parameter="rpt" scope="request">
+   <forward name="partidas" path="pagina.reportepartidas"/>
+  </action>
+  <action path="/proyectos" type="ActivosFijos.Proyectos" name="ProyectosForm" parameter="rep" scope="request">
+   <forward name="proyectos" path="pagina.proyectos"/>
+  </action>
+  <action path="/insertarproyectos" type="ActivosFijos.Proyectos" name="ProyectosForm" parameter="ins" scope="request">
+   <forward name="proyectos" path="pagina.proyectos"/>
+  </action>
+  <action path="/modificarproyectos" type="ActivosFijos.Proyectos" name="ProyectosForm" parameter="mod" scope="request">
+   <forward name="proyectos" path="pagina.proyectos"/>
+  </action>
+  <action path="/eliminarproyectos" type="ActivosFijos.Proyectos" name="ProyectosForm" parameter="eli" scope="request">
+   <forward name="proyectos" path="pagina.proyectos"/>
+  </action>
+  <action path="/reportarproyectos" type="ActivosFijos.Proyectos" name="ProyectosForm" parameter="rpt" scope="request">
+   <forward name="proyectos" path="pagina.reporteproyectos"/>
+  </action>
+  <action path="/regionales" type="ActivosFijos.Regionales" name="RegionalesForm" parameter="rep" scope="request">
+   <forward name="regionales" path="pagina.regionales"/>
+  </action>
+  <action path="/insertarregionales" type="ActivosFijos.Regionales" name="RegionalesForm" parameter="ins" scope="request">
+   <forward name="regionales" path="pagina.regionales"/>
+  </action>
+  <action path="/modificarregionales" type="ActivosFijos.Regionales" name="RegionalesForm" parameter="mod" scope="request">
+   <forward name="regionales" path="pagina.regionales"/>
+  </action>
+  <action path="/eliminarregionales" type="ActivosFijos.Regionales" name="RegionalesForm" parameter="eli" scope="request">
+   <forward name="regionales" path="pagina.regionales"/>
+  </action>
+  <action path="/reportarregionales" type="ActivosFijos.Regionales" name="RegionalesForm" parameter="rpt" scope="request">
+   <forward name="regionales" path="pagina.reporteregionales"/>
+  </action>
+  <action path="/usuarios" type="ActivosFijos.Usuarios" name="UsuariosForm" parameter="rep" scope="request">
+   <forward name="usuarios" path="pagina.usuarios"/>
+  </action>
+  <action path="/insertarusuarios" type="ActivosFijos.Usuarios" name="UsuariosForm" parameter="ins" scope="request">
+   <forward name="usuarios" path="pagina.usuarios"/>
+  </action>
+  <action path="/modificarusuarios" type="ActivosFijos.Usuarios" name="UsuariosForm" parameter="mod" scope="request">
+   <forward name="usuarios" path="pagina.usuarios"/>
+  </action>
+  <action path="/eliminarusuarios" type="ActivosFijos.Usuarios" name="UsuariosForm" parameter="eli" scope="request">
+   <forward name="usuarios" path="pagina.usuarios"/>
+  </action>
+  <action path="/reportarusuarios" type="ActivosFijos.Usuarios" name="UsuariosForm" parameter="rpt" scope="request">
+   <forward name="usuarios" path="pagina.reporteusuarios"/>
+  </action>
+  <action path="/rubros" type="ActivosFijos.Rubros" name="RubrosForm" parameter="rep" scope="request">
+   <forward name="rubros" path="pagina.rubros"/>
+  </action>
+  <action path="/insertarrubros" type="ActivosFijos.Rubros" name="RubrosForm" parameter="ins" scope="request">
+   <forward name="rubros" path="pagina.rubros"/>
+  </action>
+  <action path="/modificarrubros" type="ActivosFijos.Rubros" name="RubrosForm" parameter="mod" scope="request">
+   <forward name="rubros" path="pagina.rubros"/>
+  </action>
+  <action path="/eliminarrubros" type="ActivosFijos.Rubros" name="RubrosForm" parameter="eli" scope="request">
+   <forward name="rubros" path="pagina.rubros"/>
+  </action>
+  <action path="/reportarrubros" type="ActivosFijos.Rubros" name="RubrosForm" parameter="rpt" scope="request">
+   <forward name="rubros" path="pagina.reporterubros"/>
+  </action>
+  <action path="/secbarras" type="ActivosFijos.Secbarras" name="SecbarrasForm" parameter="rep" scope="request">
+   <forward name="secbarras" path="pagina.secbarras"/>
+  </action>
+  <action path="/insertarsecbarras" type="ActivosFijos.Secbarras" name="SecbarrasForm" parameter="ins" scope="request">
+   <forward name="secbarras" path="pagina.secbarras"/>
+  </action>
+  <action path="/modificarsecbarras" type="ActivosFijos.Secbarras" name="SecbarrasForm" parameter="mod" scope="request">
+   <forward name="secbarras" path="pagina.secbarras"/>
+  </action>
+  <action path="/eliminarsecbarras" type="ActivosFijos.Secbarras" name="SecbarrasForm" parameter="eli" scope="request">
+   <forward name="secbarras" path="pagina.secbarras"/>
+  </action>
+  <action path="/reportarsecbarras" type="ActivosFijos.Secbarras" name="SecbarrasForm" parameter="rpt" scope="request">
+   <forward name="secbarras" path="pagina.reportesecbarras"/>
+  </action>
+  <action path="/sectiposdoc" type="ActivosFijos.Sectiposdoc" name="SectiposdocForm" parameter="rep" scope="request">
+   <forward name="sectiposdoc" path="pagina.sectiposdoc"/>
+  </action>
+  <action path="/insertarsectiposdoc" type="ActivosFijos.Sectiposdoc" name="SectiposdocForm" parameter="ins" scope="request">
+   <forward name="sectiposdoc" path="pagina.sectiposdoc"/>
+  </action>
+  <action path="/modificarsectiposdoc" type="ActivosFijos.Sectiposdoc" name="SectiposdocForm" parameter="mod" scope="request">
+   <forward name="sectiposdoc" path="pagina.sectiposdoc"/>
+  </action>
+  <action path="/eliminarsectiposdoc" type="ActivosFijos.Sectiposdoc" name="SectiposdocForm" parameter="eli" scope="request">
+   <forward name="sectiposdoc" path="pagina.sectiposdoc"/>
+  </action>
+  <action path="/reportarsectiposdoc" type="ActivosFijos.Sectiposdoc" name="SectiposdocForm" parameter="rpt" scope="request">
+   <forward name="sectiposdoc" path="pagina.reportesectiposdoc"/>
+  </action>
+  <action path="/tipocambio" type="ActivosFijos.Tipocambio" name="TipocambioForm" parameter="rep" scope="request">
+   <forward name="tipocambio" path="pagina.tipocambio"/>
+  </action>
+  <action path="/insertartipocambio" type="ActivosFijos.Tipocambio" name="TipocambioForm" parameter="ins" scope="request">
+   <forward name="tipocambio" path="pagina.tipocambio"/>
+  </action>
+  <action path="/modificartipocambio" type="ActivosFijos.Tipocambio" name="TipocambioForm" parameter="mod" scope="request">
+   <forward name="tipocambio" path="pagina.tipocambio"/>
+  </action>
+  <action path="/eliminartipocambio" type="ActivosFijos.Tipocambio" name="TipocambioForm" parameter="eli" scope="request">
+   <forward name="tipocambio" path="pagina.tipocambio"/>
+  </action>
+  <action path="/reportartipocambio" type="ActivosFijos.Tipocambio" name="TipocambioForm" parameter="rpt" scope="request">
+   <forward name="tipocambio" path="pagina.reportetipocambio"/>
+  </action>
+  <action path="/tiposbaja" type="ActivosFijos.Tiposbaja" name="TiposbajaForm" parameter="rep" scope="request">
+   <forward name="tiposbaja" path="pagina.tiposbaja"/>
+  </action>
+  <action path="/insertartiposbaja" type="ActivosFijos.Tiposbaja" name="TiposbajaForm" parameter="ins" scope="request">
+   <forward name="tiposbaja" path="pagina.tiposbaja"/>
+  </action>
+  <action path="/modificartiposbaja" type="ActivosFijos.Tiposbaja" name="TiposbajaForm" parameter="mod" scope="request">
+   <forward name="tiposbaja" path="pagina.tiposbaja"/>
+  </action>
+  <action path="/eliminartiposbaja" type="ActivosFijos.Tiposbaja" name="TiposbajaForm" parameter="eli" scope="request">
+   <forward name="tiposbaja" path="pagina.tiposbaja"/>
+  </action>
+  <action path="/reportartiposbaja" type="ActivosFijos.Tiposbaja" name="TiposbajaForm" parameter="rpt" scope="request">
+   <forward name="tiposbaja" path="pagina.reportetiposbaja"/>
+  </action>
+  <action path="/tiposdoc" type="ActivosFijos.Tiposdoc" name="TiposdocForm" parameter="rep" scope="request">
+   <forward name="tiposdoc" path="pagina.tiposdoc"/>
+  </action>
+  <action path="/insertartiposdoc" type="ActivosFijos.Tiposdoc" name="TiposdocForm" parameter="ins" scope="request">
+   <forward name="tiposdoc" path="pagina.tiposdoc"/>
+  </action>
+  <action path="/modificartiposdoc" type="ActivosFijos.Tiposdoc" name="TiposdocForm" parameter="mod" scope="request">
+   <forward name="tiposdoc" path="pagina.tiposdoc"/>
+  </action>
+  <action path="/eliminartiposdoc" type="ActivosFijos.Tiposdoc" name="TiposdocForm" parameter="eli" scope="request">
+   <forward name="tiposdoc" path="pagina.tiposdoc"/>
+  </action>
+  <action path="/reportartiposdoc" type="ActivosFijos.Tiposdoc" name="TiposdocForm" parameter="rpt" scope="request">
+   <forward name="tiposdoc" path="pagina.reportetiposdoc"/>
+  </action>
+  <action path="/ubicaciones" type="ActivosFijos.Ubicaciones" name="UbicacionesForm" parameter="rep" scope="request">
+   <forward name="ubicaciones" path="pagina.ubicaciones"/>
+  </action>
+  <action path="/insertarubicaciones" type="ActivosFijos.Ubicaciones" name="UbicacionesForm" parameter="ins" scope="request">
+   <forward name="ubicaciones" path="pagina.ubicaciones"/>
+  </action>
+  <action path="/modificarubicaciones" type="ActivosFijos.Ubicaciones" name="UbicacionesForm" parameter="mod" scope="request">
+   <forward name="ubicaciones" path="pagina.ubicaciones"/>
+  </action>
+  <action path="/eliminarubicaciones" type="ActivosFijos.Ubicaciones" name="UbicacionesForm" parameter="eli" scope="request">
+   <forward name="ubicaciones" path="pagina.ubicaciones"/>
+  </action>
+  <action path="/reportarubicaciones" type="ActivosFijos.Ubicaciones" name="UbicacionesForm" parameter="rpt" scope="request">
+   <forward name="ubicaciones" path="pagina.reporteubicaciones"/>
+  </action>
+
+  <action path="/pass" type="ActivosFijos.Password">
+   <forward name="password" path="pagina.cambiarPassword"/>
+  </action>
+  <action path="/logout" type="ActivosFijos.logout">
+   <forward name="volver" path="Inicio.jsp"/>
+  </action>  
+  <action path="/reporte" type="ActivosFijos.Reporte">
+      <forward name="reporte" path="pagina.listado"/>
+    </action>
+ </action-mappings>
+ <message-resources parameter="ActivosFijos.Messages"/>
+ <plug-in className="org.apache.struts.tiles.TilesPlugin">
+  <set-property value="/WEB-INF/tiles-defs.xml" property="definitions-config"/>
+  <set-property value="2" property="definitions-debug"/>
+  <set-property value="2" property="definitions-parser-details"/>
+  <set-property value="true" property="definitions-parse-validate"/>
+ </plug-in>
+</struts-config>

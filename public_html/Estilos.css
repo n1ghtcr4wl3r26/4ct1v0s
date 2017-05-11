@@ -1,0 +1,146 @@
+.suave
+{ 
+background-color:#E2EAF1;
+}
+.sincolor
+{COLOR: #E1F0FF; FONT-FAMILY: "Arial";}
+.solofondo {
+    background-color: #E1F0FF
+}
+.soloborde {
+	border: 1px solid #345487; background-color: #F5F9FD;
+}
+.bordeListados {
+	border: 1px solid #345487; background-color: #F5F9FD;
+}
+.S12iz {
+	FONT-SIZE: 14px; COLOR: #0033CC; FONT-FAMILY: "Verdana"; TEXT-DECORATION: "Underline"; text-align:left; align="right";
+}
+.S12 {
+	FONT-SIZE: 14px; COLOR: #0033CC; FONT-FAMILY: "Verdana"; TEXT-DECORATION: "Underline"; text-align:left;
+}
+.S10 {
+	FONT-SIZE: 12px; COLOR: #FFFFF; FONT-FAMILY: "Arial"; TEXT-DECORATION: none; text-align:left;
+}
+.S10d {
+	FONT-SIZE: 12px; COLOR: #FFFFF; FONT-FAMILY: "Arial"; TEXT-DECORATION: none; text-align:right;
+}
+.S10i {
+	FONT-SIZE: 12px; COLOR: #FFFFF; FONT-FAMILY: "Arial"; TEXT-DECORATION: none; text-align:left;
+}
+.P10d {
+	FONT-SIZE: 12px; COLOR: #676767; FONT-FAMILY: "Arial"; TEXT-DECORATION: none; text-align:right;
+}
+
+.S10c {
+	FONT-SIZE: 12px; COLOR: #FFFFF; FONT-FAMILY: "Arial"; TEXT-DECORATION: none; text-align:center;
+}
+.S8 {
+	FONT-SIZE: 10px; COLOR: #0000B9; FONT-FAMILY: "Verdana"; TEXT-DECORATION: none;
+}
+
+.T10a {
+	FONT-SIZE: 10px; COLOR: #ffffff; FONT-FAMILY: "Arial"; text-align: left; BACKGROUND-COLOR: #3558ad; height: 20px; text-indent: 5px;
+}
+.T8 {
+	FONT-WEIGHT: normal; FONT-SIZE: 11px; COLOR: #333333; FONT-FAMILY: "Arial"; TEXT-DECORATION: none; text-align:center;
+}
+.T8a {
+	background-color: #E6F2FF; FONT-WEIGHT: normal; FONT-SIZE: 11px; COLOR: #333333; FONT-FAMILY: "Arial"; TEXT-DECORATION: none; text-align:left;
+}
+.T8b {
+	background-color: #F0F0F0; FONT-WEIGHT: normal; FONT-SIZE: 11px; COLOR: #333333; FONT-FAMILY: "Arial"; TEXT-DECORATION: none; text-align:left;
+}
+.T8r {
+	background-color: #FF8C8C; FONT-WEIGHT: normal; FONT-SIZE: 11px; COLOR: #333333; FONT-FAMILY: "Arial"; TEXT-DECORATION: none; text-align:left;
+}
+.T8n {
+	background-color: #FFAE88; FONT-WEIGHT: normal; FONT-SIZE: 11px; COLOR: #333333; FONT-FAMILY: "Arial"; TEXT-DECORATION: none; text-align:left;
+}
+.T8am {
+	background-color: #FFFFB7; FONT-WEIGHT: normal; FONT-SIZE: 11px; COLOR: #333333; FONT-FAMILY: "Arial"; TEXT-DECORATION: none; text-align:left;
+}
+.T9i {
+	border: 1px solid #345487; background-color: #3558ad; FONT-SIZE: 11px; COLOR: #ffffff; FONT-FAMILY: "Arial"; TEXT-DECORATION: none; text-align: left;
+}
+.T9d {
+	border: 1px solid #345487; background-color: #3558ad; FONT-SIZE: 11px; COLOR: #ffffff; FONT-FAMILY: "Arial"; TEXT-DECORATION: none; text-align: right;
+}
+.soloresaltar {
+	border: 1px solid #345487; background-color: #6699FF; FONT-WEIGHT: normal; FONT-SIZE: 12px; COLOR: #000000; FONT-FAMILY: "Arial"; TEXT-DECORATION: none; text-align: center;
+}
+.FondoVerde {
+	border: 1px solid #333333; background-color: #B8DCDC; FONT-WEIGHT: normal; FONT-SIZE: 12px; COLOR: #000000; FONT-FAMILY: "Arial"; TEXT-DECORATION: bold; text-align: LEFT; COLOR: #000066; 
+}
+.FondoAzul {
+	border: 1px solid #333333; background-color: #30509A; FONT-WEIGHT: normal; FONT-SIZE: 12px; COLOR: #FFFFFF;; FONT-FAMILY: "Arial"; TEXT-DECORATION: bold;   
+}
+
+.FondoAzul10 {
+	border: 1px solid #333333; background-color: #30509A; FONT-WEIGHT: normal; FONT-SIZE: 10px; COLOR: #FFFFFF;; FONT-FAMILY: "Arial"; TEXT-DECORATION: bold;   
+}
+
+INPUT {
+	FONT-WEIGHT: normal; FONT-SIZE: 11px; COLOR: #333333; FONT-FAMILY: "Arial"; TEXT-DECORATION: none
+}
+SELECT {
+	FONT-WEIGHT: normal; FONT-SIZE: 10px; COLOR: #333333; FONT-FAMILY: "Arial"; TEXT-DECORATION: none;
+  
+}
+
+textarea {
+	FONT-WEIGHT: normal; FONT-SIZE: 11px; COLOR: #333333; FONT-FAMILY: "Arial"; TEXT-DECORATION: none
+}
+
+td {
+  height: 16px;
+}
+
+.boton {
+  BACKGROUND: #F5F9FD; 
+  BORDER-BOTTOM: #345487 1px solid; 
+  BORDER-LEFT: #afc4d5 1px solid; 
+  BORDER-RIGHT: #345487 1px solid; 
+  BORDER-TOP: #afc4d5 1px solid;
+  COLOR: #000000; 
+  CURSOR: hand; 
+  width: 85px;
+  FONT-SIZE: 10px; 
+  TEXT-DECORATION: none
+}
+
+.boton1 {
+  BACKGROUND: #F5F9FD; 
+  BORDER-BOTTOM: #345487 1px solid; 
+  BORDER-LEFT: #afc4d5 1px solid; 
+  BORDER-RIGHT: #345487 1px solid; 
+  BORDER-TOP: #afc4d5 1px solid;
+  COLOR: #000066; 
+  CURSOR: hand; 
+  FONT-SIZE: 12px; 
+  TEXT-DECORATION: none
+}
+TD.cabecera_menu {
+	COLOR: #232323; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 11px; TEXT-ALIGN: center
+}
+TD.entrada_menu {
+	BACKGROUND-COLOR: #dbe0e8; COLOR: #000000; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 11px; MARGIN-LEFT: 0.5em; PADDING-LEFT: 0.5em; TEXT-ALIGN: left; text-transform: capitalize;
+}
+.message {
+  FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; 
+	COLOR: #004080;
+	font-size: 12px;
+	height: 25px;
+	vertical-align: middle;
+}
+caption {
+	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+	COLOR: #FFFFFF;
+	font-size: 16px;
+	height: 25px;
+	BACKGROUND-COLOR: #30509A;
+	font-weight: bold;
+}
+body {
+background-color: #F9FEFF;
+}

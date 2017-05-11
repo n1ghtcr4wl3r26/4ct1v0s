@@ -1,0 +1,1270 @@
+<?xml version="1.0" encoding="UTF-8"  ?>
+<!-- Created with iReport - A designer for JasperReports -->
+<!DOCTYPE jasperReport PUBLIC "//JasperReports//DTD Report Design//EN" "http://jasperreports.sourceforge.net/dtds/jasperreport.dtd">
+<jasperReport
+		 name="depre09"
+		 columnCount="1"
+		 printOrder="Vertical"
+		 orientation="Landscape"
+		 pageWidth="1008"
+		 pageHeight="612"
+		 columnWidth="948"
+		 columnSpacing="0"
+		 leftMargin="30"
+		 rightMargin="30"
+		 topMargin="20"
+		 bottomMargin="20"
+		 whenNoDataType="NoPages"
+		 isTitleNewPage="false"
+		 isSummaryNewPage="false">
+	<property name="ireport.scriptlethandling" value="0" />
+	<property name="ireport.encoding" value="UTF-8" />
+	<import value="java.util.*" />
+	<import value="net.sf.jasperreports.engine.*" />
+	<import value="net.sf.jasperreports.engine.data.*" />
+
+	<parameter name="rev_fechaf" isForPrompting="true" class="java.lang.String"/>
+	<parameter name="par_usuario" isForPrompting="true" class="java.lang.String"/>
+	<parameter name="dep_gesac" isForPrompting="true" class="java.lang.String"/>
+	<parameter name="dep_gesan" isForPrompting="true" class="java.lang.String"/>
+	<parameter name="par_codpry" isForPrompting="true" class="java.lang.String"/>
+	<parameter name="par_codpryf" isForPrompting="true" class="java.lang.String"/>
+	<queryString><![CDATA[select rub_ctadep,par_descripcion,
+       nvl(count(decode(to_char(rev_fecsis,'MMYYYY'),to_char(dep_fecha,'MMYYYY'),act_codigo)),0)
+      -nvl(count(decode(to_char(act_fecbaja,'MMYYYY'),to_char(dep_fecha,'MMYYYY'),act_codigo)),0) nitem,
+       nvl(round(sum(decode(dep_anio,$P{dep_gesac},0,decode(to_char(rev_fecha,'MMYYYY'),to_char(dep_fecha,'MMYYYY'),rev_valbol,0))),2),0)
+      +nvl(round(sum(decode(dep_anio,$P{dep_gesac},0,dep_factorbol)),2),0)  -
+      nvl(round(sum(decode(to_char(act_fecbaja,'YYYY'),$P{dep_gesan},(
+       nvl(decode(to_char(rev_fecha,'MMYYYY'),to_char(dep_fecha,'MMYYYY'),rev_valbol),0)
+      +nvl(decode(dep_anio,$P{dep_gesan},0,dep_factorbol),0)
+      +nvl(decode(dep_anio,$P{dep_gesan},dep_factorbol),0)))),2),0) valbola,       
+
+       nvl(round(sum(decode(dep_anio,$P{dep_gesac},0,dep_actufacbol)),2),0)
+      +nvl(round(sum(decode(dep_anio,$P{dep_gesac},0,dep_factordol)),2),0) 
+
+      -(nvl(round(sum(decode(to_char(act_fecbaja,'MMYYYY'),to_char(dep_fecha,'MMYYYY'),dep_actufacdol)),2),0)-
+      nvl(round(sum(decode(to_char(act_fecbaja,'YYYY'),'2010',(
+       nvl(decode
+       (to_char(act_fecbaja,'MMYYYY'),
+       to_char(dep_fecha,'MMYYYY'),dep_actufacdol)
+       ,0)))),2),0))
+       depbola,
+
+       nvl(round(sum(decode(to_char(act_fecbaja,'YYYY'),$P{dep_gesac},(
+       nvl(decode(to_char(rev_fecha,'MMYYYY'),to_char(dep_fecha,'MMYYYY'),rev_valbol),0)
+      +nvl(decode(dep_anio,$P{dep_gesac},0,dep_factorbol),0)
+      +nvl(decode(dep_anio,$P{dep_gesac},dep_factorbol),0)))),2),0) valbolb,
+
+       nvl(round(sum(decode(to_char(act_fecbaja,'YYYY'),$P{dep_gesac},(
+       nvl(decode
+       (to_char(act_fecbaja,'MMYYYY'),
+       to_char(dep_fecha,'MMYYYY'),dep_actufacdol)
+       ,0)))),2),0) depbolb,
+
+       nvl(round(sum(decode(dep_anio,$P{dep_gesac},dep_factorbol)),2),0) actval,
+       nvl(round(sum(decode(dep_anio,$P{dep_gesac},dep_factordol)),2),0) actdep,
+       nvl(round(sum(decode(dep_anio,$P{dep_gesac},dep_actufacbol)),2),0) depges,
+       nvl(round(sum(decode(dep_anio,$P{dep_gesac},decode(to_char(rev_fecha,'MMYYYY'),to_char(dep_fecha,'MMYYYY'),rev_valbol,0),0)),2),0) incorp,
+       (nvl(round(sum(decode(to_char(rev_fecha,'MMYYYY'),to_char(dep_fecha,'MMYYYY'),rev_valbol)),2),0)
+      +nvl(round(sum(decode(dep_anio,$P{dep_gesac},0,dep_factorbol)),2),0)
+      +nvl(round(sum(decode(dep_anio,$P{dep_gesac},dep_factorbol)),2),0) -
+
+      nvl(
+        round(
+          sum(
+            decode(
+              to_char(act_fecbaja,'YYYY'),$P{dep_gesan},
+              (
+                nvl(decode(to_char(rev_fecha,'MMYYYY'),to_char(dep_fecha,'MMYYYY'),rev_valbol),0)
+                +nvl(decode(dep_anio,$P{dep_gesan},0,dep_factorbol),0)
+                +nvl(decode(dep_anio,$P{dep_gesan},dep_factorbol),0)
+              )
+            )
+          )
+        ,2)
+      ,0)
+
+       )
+      -nvl(
+       round(sum(decode(to_char(act_fecbaja,'YYYY'),$P{dep_gesac},(
+       nvl(decode(to_char(rev_fecha,'MMYYYY'),to_char(dep_fecha,'MMYYYY'),rev_valbol),0)
+      +nvl(decode(dep_anio,$P{dep_gesac},0,dep_factorbol),0)
+      +nvl(decode(dep_anio,$P{dep_gesac},dep_factorbol),0)))),2),0) valbol,         
+       (nvl(round(sum(decode(dep_anio,$P{dep_gesac},dep_actufacbol,0)),2),0)
+      +nvl(round(sum(decode(dep_anio,$P{dep_gesac},0,dep_actufacbol)),2),0)
+      +nvl(round(sum(decode(dep_anio,$P{dep_gesac},0,dep_factordol)),2),0)
+      +nvl(round(sum(decode(dep_anio,$P{dep_gesac},dep_factordol,0)),2),0))
+      -nvl(round(sum(decode(to_char(act_fecbaja,'MMYYYY'),to_char(dep_fecha,'MMYYYY'),dep_actufacdol)),2),0) depbol,
+       (((nvl(round(sum(decode(to_char(rev_fecha,'MMYYYY'),to_char(dep_fecha,'MMYYYY'),rev_valbol)),2),0)
+      +nvl(round(sum(decode(dep_anio,$P{dep_gesac},0,dep_factorbol)),2),0)
+      +nvl(round(sum(decode(dep_anio,$P{dep_gesac},dep_factorbol)),2),0))
+      -nvl(round(sum(decode(to_char(act_fecbaja,'YYYY'),$P{dep_gesac},(
+       nvl(decode(to_char(rev_fecha,'MMYYYY'),to_char(dep_fecha,'MMYYYY'),rev_valbol),0)
+      +nvl(decode(dep_anio,$P{dep_gesac},0,dep_factorbol),0)
+      +nvl(decode(dep_anio,$P{dep_gesac},dep_factorbol),0)))),2),0) -
+
+      nvl(
+        round(
+          sum(
+            decode(
+              to_char(act_fecbaja,'YYYY'),$P{dep_gesan},
+              (
+                nvl(decode(to_char(rev_fecha,'MMYYYY'),to_char(dep_fecha,'MMYYYY'),rev_valbol),0)
+                +nvl(decode(dep_anio,$P{dep_gesan},0,dep_factorbol),0)
+                +nvl(decode(dep_anio,$P{dep_gesan},dep_factorbol),0)
+              )
+            )
+          )
+        ,2)
+      ,0) 
+
+      )
+      - ((nvl(round(sum(decode(dep_anio,$P{dep_gesac},dep_actufacbol,0)),2),0)
+      +nvl(round(sum(decode(dep_anio,$P{dep_gesac},0,dep_actufacbol)),2),0)
+      +nvl(round(sum(decode(dep_anio,$P{dep_gesac},0,dep_factordol)),2),0)
+      +nvl(round(sum(decode(dep_anio,$P{dep_gesac},dep_factordol,0)),2),0))
+      -nvl(round(sum(decode(to_char(act_fecbaja,'MMYYYY'),to_char(dep_fecha,'MMYYYY'),dep_actufacdol)),2),0))) valres
+  from activos.activos, activos.revaluos, activos.rubros, activos.depreciaciones, activos.partidas
+  where act_codrub=rev_codrub and act_codreg=rev_codreg and act_codigo=rev_codigo
+        and act_codrub=rub_codigo and act_codrub=dep_codrub and act_codreg=dep_codreg
+        and act_codigo=dep_codigo and rev_numrevaluo=dep_numrevaluo and rub_codpar=par_codigo
+        and act_codfin<>'03' and act_codpry>=$P{par_codpry} and act_codpry<=$P{par_codpryf}        
+        and rev_fecha < = to_date($P{rev_fechaf},'DD/MM/YYYY') 
+        and dep_fecha < = to_date($P{rev_fechaf},'DD/MM/YYYY')
+  group by rub_ctadep,par_descripcion]]></queryString>
+
+	<field name="RUB_CTADEP" class="java.lang.String"/>
+	<field name="PAR_DESCRIPCION" class="java.lang.String"/>
+	<field name="ACTDEP" class="java.math.BigDecimal"/>
+	<field name="ACTVAL" class="java.math.BigDecimal"/>
+	<field name="DEPGES" class="java.math.BigDecimal"/>
+	<field name="NITEM" class="java.math.BigDecimal"/>
+	<field name="VALBOLB" class="java.math.BigDecimal"/>
+	<field name="INCORP" class="java.math.BigDecimal"/>
+	<field name="VALBOLA" class="java.math.BigDecimal"/>
+	<field name="DEPBOLA" class="java.math.BigDecimal"/>
+	<field name="DEPBOLB" class="java.math.BigDecimal"/>
+	<field name="VALBOL" class="java.math.BigDecimal"/>
+	<field name="DEPBOL" class="java.math.BigDecimal"/>
+	<field name="VALRES" class="java.math.BigDecimal"/>
+
+	<variable name="SUM_VALBOL_2" class="java.math.BigDecimal" resetType="Report" calculation="Sum">
+		<variableExpression><![CDATA[$F{VALBOL}]]></variableExpression>
+	</variable>
+	<variable name="SUM_DEPBOL_2" class="java.math.BigDecimal" resetType="Report" calculation="Sum">
+		<variableExpression><![CDATA[$F{DEPBOL}]]></variableExpression>
+	</variable>
+	<variable name="SUM_VALRES_2" class="java.math.BigDecimal" resetType="Report" calculation="Sum">
+		<variableExpression><![CDATA[$F{VALRES}]]></variableExpression>
+	</variable>
+	<variable name="SUM_VALBOLA_2" class="java.math.BigDecimal" resetType="Report" calculation="Sum">
+		<variableExpression><![CDATA[$F{VALBOLA}]]></variableExpression>
+	</variable>
+	<variable name="SUM_DEPBOLA_2" class="java.math.BigDecimal" resetType="Report" calculation="Sum">
+		<variableExpression><![CDATA[$F{DEPBOLA}]]></variableExpression>
+	</variable>
+	<variable name="SUM_ACTDEP_2" class="java.math.BigDecimal" resetType="Report" calculation="Sum">
+		<variableExpression><![CDATA[$F{ACTDEP}]]></variableExpression>
+	</variable>
+	<variable name="SUM_ACTVAL_2" class="java.math.BigDecimal" resetType="Report" calculation="Sum">
+		<variableExpression><![CDATA[$F{ACTVAL}]]></variableExpression>
+	</variable>
+	<variable name="SUM_DEPGES_2" class="java.math.BigDecimal" resetType="Report" calculation="Sum">
+		<variableExpression><![CDATA[$F{DEPGES}]]></variableExpression>
+	</variable>
+	<variable name="SUM_INCORP_2" class="java.math.BigDecimal" resetType="Report" calculation="Sum">
+		<variableExpression><![CDATA[$F{INCORP}]]></variableExpression>
+	</variable>
+	<variable name="SUM_VALBOLB_2" class="java.math.BigDecimal" resetType="Report" calculation="Sum">
+		<variableExpression><![CDATA[$F{VALBOLB}]]></variableExpression>
+	</variable>
+	<variable name="SUM_DEPBOLB_2" class="java.math.BigDecimal" resetType="Report" calculation="Sum">
+		<variableExpression><![CDATA[$F{DEPBOLB}]]></variableExpression>
+	</variable>
+	<variable name="SUM_NITEM_2" class="java.math.BigDecimal" resetType="Report" calculation="Sum">
+		<variableExpression><![CDATA[$F{NITEM}]]></variableExpression>
+	</variable>
+		<background>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</background>
+		<title>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</title>
+		<pageHeader>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</pageHeader>
+		<columnHeader>
+			<band height="120"  isSplitAllowed="true" >
+				<staticText>
+					<reportElement
+						x="337"
+						y="9"
+						width="335"
+						height="20"
+						key="staticText-5"
+						positionType="Float"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement textAlignment="Center">
+						<font fontName="Courier New" pdfFontName="Courier-Bold" size="12" isBold="true" isUnderline="true"/>
+					</textElement>
+				<text><![CDATA[RESUMEN MOVIMIENTO ACTIVO FIJO POR CUENTA]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="519"
+						y="31"
+						width="65"
+						height="14"
+						key="textField-10"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Courier New" pdfFontName="Courier-Bold" isBold="true"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$P{rev_fechaf}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="6"
+						y="5"
+						width="200"
+						height="33"
+						key="staticText-7"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement textAlignment="Justified" verticalAlignment="Middle">
+						<font fontName="Courier New" pdfFontName="Courier-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[            ADUANA NACIONAL            
+DPTO. ADMINISTRACION BIENES Y SERVICIOS
+        UNIDAD DE ACTIVOS FIJOS        
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="416"
+						y="32"
+						width="103"
+						height="13"
+						key="staticText-10"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Courier New" pdfFontName="Courier-Bold" isBold="true"/>
+					</textElement>
+				<text><![CDATA[DEPRECIADOS AL:]]></text>
+				</staticText>
+				<line direction="TopDown">
+					<reportElement
+						x="2"
+						y="64"
+						width="873"
+						height="1"
+						forecolor="#000000"
+						key="line-1"
+						positionType="FixRelativeToBottom"/>
+					<graphicElement stretchType="NoStretch" pen="2Point"/>
+				</line>
+				<rectangle radius="0" >
+					<reportElement
+						mode="Opaque"
+						x="1"
+						y="91"
+						width="946"
+						height="26"
+						forecolor="#000000"
+						backcolor="#CCCCCC"
+						key="element-1"/>
+					<graphicElement stretchType="NoStretch" pen="Thin"/>
+				</rectangle>
+				<staticText>
+					<reportElement
+						x="4"
+						y="102"
+						width="23"
+						height="14"
+						key="element-2"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" leftPadding="2" rightBorder="None" rightBorderColor="#000000" rightPadding="2" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="" pdfFontName="Courier-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[CTA.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="43"
+						y="102"
+						width="76"
+						height="14"
+						key="element-3"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" leftPadding="2" rightBorder="None" rightBorderColor="#000000" rightPadding="2" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="" pdfFontName="Courier-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[DESCRIPCION]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="410"
+						y="47"
+						width="174"
+						height="13"
+						key="staticText-12"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Courier New" pdfFontName="Courier-Bold" isBold="true"/>
+					</textElement>
+				<text><![CDATA[(Expresado en Bolivianos)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="398"
+						y="94"
+						width="53"
+						height="24"
+						key="element-4"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" leftPadding="2" rightBorder="None" rightBorderColor="#000000" rightPadding="2" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="" pdfFontName="Courier-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Bajas Ajustes]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="465"
+						y="94"
+						width="57"
+						height="24"
+						key="element-5"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" leftPadding="2" rightBorder="None" rightBorderColor="#000000" rightPadding="2" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="" pdfFontName="Courier-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Gestión Actual]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="534"
+						y="94"
+						width="55"
+						height="24"
+						key="element-6"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" leftPadding="2" rightBorder="None" rightBorderColor="#000000" rightPadding="2" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="" pdfFontName="Courier-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Gestión Anterior]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="667"
+						y="94"
+						width="67"
+						height="24"
+						key="element-7"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" leftPadding="2" rightBorder="None" rightBorderColor="#000000" rightPadding="2" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="" pdfFontName="Courier-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Actualización de Valores]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="749"
+						y="94"
+						width="49"
+						height="24"
+						key="element-8"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" leftPadding="2" rightBorder="None" rightBorderColor="#000000" rightPadding="2" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="" pdfFontName="Courier-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Bajas Ajustes]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="811"
+						y="94"
+						width="57"
+						height="24"
+						key="element-9"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" leftPadding="2" rightBorder="None" rightBorderColor="#000000" rightPadding="2" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="" pdfFontName="Courier-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Gestión Actual]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="887"
+						y="94"
+						width="53"
+						height="24"
+						key="element-10"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" leftPadding="2" rightBorder="None" rightBorderColor="#000000" rightPadding="2" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="" pdfFontName="Courier-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Valor Residual]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="250"
+						y="94"
+						width="63"
+						height="24"
+						key="element-11"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" leftPadding="2" rightBorder="None" rightBorderColor="#000000" rightPadding="2" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="" pdfFontName="Courier-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Altas de la Gestión]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="184"
+						y="94"
+						width="56"
+						height="24"
+						key="element-12"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" leftPadding="2" rightBorder="None" rightBorderColor="#000000" rightPadding="2" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="" pdfFontName="Courier-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Gestión Anterior]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="142"
+						y="94"
+						width="30"
+						height="24"
+						key="element-13"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" leftPadding="2" rightBorder="None" rightBorderColor="#000000" rightPadding="2" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="" pdfFontName="Courier-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[No. Item]]></text>
+				</staticText>
+				<rectangle radius="0" >
+					<reportElement
+						mode="Opaque"
+						x="173"
+						y="66"
+						width="702"
+						height="26"
+						forecolor="#000000"
+						backcolor="#CCCCCC"
+						key="element-14"/>
+					<graphicElement stretchType="NoStretch" pen="Thin"/>
+				</rectangle>
+				<line direction="TopDown">
+					<reportElement
+						x="172"
+						y="91"
+						width="1"
+						height="25"
+						key="line-2"/>
+					<graphicElement stretchType="NoStretch"/>
+				</line>
+				<line direction="TopDown">
+					<reportElement
+						x="140"
+						y="92"
+						width="1"
+						height="25"
+						key="line-3"/>
+					<graphicElement stretchType="NoStretch"/>
+				</line>
+				<line direction="TopDown">
+					<reportElement
+						x="874"
+						y="92"
+						width="1"
+						height="25"
+						key="line-4"/>
+					<graphicElement stretchType="NoStretch"/>
+				</line>
+				<staticText>
+					<reportElement
+						x="190"
+						y="79"
+						width="49"
+						height="12"
+						key="element-15"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" leftPadding="2" rightBorder="None" rightBorderColor="#000000" rightPadding="2" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="" pdfFontName="Courier-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Saldo]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="252"
+						y="78"
+						width="116"
+						height="14"
+						key="element-16"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" leftPadding="2" rightBorder="None" rightBorderColor="#000000" rightPadding="2" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="" pdfFontName="Courier-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Incorporaciones]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="404"
+						y="79"
+						width="49"
+						height="12"
+						key="element-17"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" leftPadding="2" rightBorder="None" rightBorderColor="#000000" rightPadding="2" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="" pdfFontName="Courier-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Retiros]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="473"
+						y="79"
+						width="49"
+						height="12"
+						key="element-18"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" leftPadding="2" rightBorder="None" rightBorderColor="#000000" rightPadding="2" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="" pdfFontName="Courier-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Saldo]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="270"
+						y="66"
+						width="139"
+						height="12"
+						key="element-19"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" leftPadding="2" rightBorder="None" rightBorderColor="#000000" rightPadding="2" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="" pdfFontName="Courier-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[ACTIVO FIJO]]></text>
+				</staticText>
+				<line direction="TopDown">
+					<reportElement
+						x="524"
+						y="64"
+						width="1"
+						height="54"
+						key="line-5"/>
+					<graphicElement stretchType="NoStretch"/>
+				</line>
+				<line direction="BottomUp">
+					<reportElement
+						x="173"
+						y="78"
+						width="701"
+						height="1"
+						key="line-6"/>
+					<graphicElement stretchType="NoStretch"/>
+				</line>
+				<line direction="TopDown">
+					<reportElement
+						x="238"
+						y="79"
+						width="1"
+						height="38"
+						key="line-7"/>
+					<graphicElement stretchType="NoStretch"/>
+				</line>
+				<line direction="TopDown">
+					<reportElement
+						x="385"
+						y="79"
+						width="1"
+						height="38"
+						key="line-8"/>
+					<graphicElement stretchType="NoStretch"/>
+				</line>
+				<line direction="TopDown">
+					<reportElement
+						x="460"
+						y="78"
+						width="1"
+						height="38"
+						key="line-9"/>
+					<graphicElement stretchType="NoStretch"/>
+				</line>
+				<staticText>
+					<reportElement
+						x="606"
+						y="65"
+						width="148"
+						height="12"
+						key="element-20"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" leftPadding="2" rightBorder="None" rightBorderColor="#000000" rightPadding="2" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="" pdfFontName="Courier-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[DEPRECIACION ACUMULADA]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="535"
+						y="79"
+						width="49"
+						height="12"
+						key="element-21"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" leftPadding="2" rightBorder="None" rightBorderColor="#000000" rightPadding="2" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="" pdfFontName="Courier-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Saldo]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="608"
+						y="78"
+						width="116"
+						height="14"
+						key="element-22"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" leftPadding="2" rightBorder="None" rightBorderColor="#000000" rightPadding="2" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="" pdfFontName="Courier-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Incorporaciones]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="751"
+						y="79"
+						width="49"
+						height="12"
+						key="element-23"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" leftPadding="2" rightBorder="None" rightBorderColor="#000000" rightPadding="2" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="" pdfFontName="Courier-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Retiros]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="819"
+						y="79"
+						width="49"
+						height="12"
+						key="element-24"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" leftPadding="2" rightBorder="None" rightBorderColor="#000000" rightPadding="2" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="" pdfFontName="Courier-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Saldo]]></text>
+				</staticText>
+				<line direction="TopDown">
+					<reportElement
+						x="594"
+						y="79"
+						width="1"
+						height="38"
+						key="line-10"/>
+					<graphicElement stretchType="NoStretch"/>
+				</line>
+				<line direction="TopDown">
+					<reportElement
+						x="735"
+						y="79"
+						width="1"
+						height="38"
+						key="line-11"/>
+					<graphicElement stretchType="NoStretch"/>
+				</line>
+				<line direction="TopDown">
+					<reportElement
+						x="806"
+						y="79"
+						width="1"
+						height="38"
+						key="line-12"/>
+					<graphicElement stretchType="NoStretch"/>
+				</line>
+				<line direction="TopDown">
+					<reportElement
+						x="665"
+						y="92"
+						width="1"
+						height="25"
+						key="line-13"/>
+					<graphicElement stretchType="NoStretch"/>
+				</line>
+				<line direction="TopDown">
+					<reportElement
+						x="315"
+						y="92"
+						width="1"
+						height="25"
+						key="line-14"/>
+					<graphicElement stretchType="NoStretch"/>
+				</line>
+				<staticText>
+					<reportElement
+						x="317"
+						y="94"
+						width="67"
+						height="24"
+						key="element-25"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" leftPadding="2" rightBorder="None" rightBorderColor="#000000" rightPadding="2" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="" pdfFontName="Courier-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Actualización de Valores]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="596"
+						y="93"
+						width="67"
+						height="24"
+						key="element-26"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" leftPadding="2" rightBorder="None" rightBorderColor="#000000" rightPadding="2" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="" pdfFontName="Courier-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Depreciación Gestión]]></text>
+				</staticText>
+				<line direction="TopDown">
+					<reportElement
+						x="2"
+						y="118"
+						width="945"
+						height="1"
+						forecolor="#000000"
+						key="line-15"
+						positionType="FixRelativeToBottom"/>
+					<graphicElement stretchType="NoStretch" pen="2Point"/>
+				</line>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="3"
+						y="67"
+						width="169"
+						height="14"
+						key="textField-62"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Courier New" pdfFontName="Courier-Bold" isBold="true"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA["Finan: 01-02 Proy:"+$P{par_codpry}+"-"+$P{par_codpryf}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="7"
+						y="47"
+						width="106"
+						height="13"
+						key="staticText-14"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Courier New" pdfFontName="Courier-Bold" isBold="true"/>
+					</textElement>
+				<text><![CDATA[CONSOLIDADO]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="830"
+						y="33"
+						width="33"
+						height="15"
+						key="staticText-15"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Courier New" pdfFontName="Courier-Bold" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Hora:]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" pattern="h.mm a" isBlankWhenNull="false" evaluationTime="Report" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="864"
+						y="33"
+						width="61"
+						height="15"
+						key="textField-63"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Courier New" pdfFontName="Courier-Bold" isBold="true"/>
+					</textElement>
+				<textFieldExpression   class="java.util.Date"><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="830"
+						y="3"
+						width="76"
+						height="14"
+						key="textField-64"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Courier New" pdfFontName="Courier-Bold" isBold="true"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA["Hoja "+$V{PAGE_NUMBER}+" de "]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Report" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="906"
+						y="3"
+						width="25"
+						height="14"
+						key="textField-65"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Courier New" pdfFontName="Courier-Bold" size="10" isBold="true"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[""+$V{PAGE_NUMBER}+""]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="829"
+						y="50"
+						width="51"
+						height="13"
+						key="staticText-16"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Courier New" pdfFontName="Courier-Bold" size="10" isBold="true"/>
+					</textElement>
+				<text><![CDATA[USUARIO:]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="880"
+						y="50"
+						width="60"
+						height="13"
+						key="textField-66"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Courier New" pdfFontName="Courier-Bold" size="10" isBold="true"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$P{par_usuario}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="dd/MM/yyyy" isBlankWhenNull="false" evaluationTime="Report" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="876"
+						y="19"
+						width="62"
+						height="12"
+						key="textField-67"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Courier New" pdfFontName="Courier-Bold" size="10" isBold="true"/>
+					</textElement>
+				<textFieldExpression   class="java.util.Date"><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="830"
+						y="18"
+						width="43"
+						height="15"
+						key="staticText-17"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Courier New" pdfFontName="Courier-Bold" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Fecha:]]></text>
+				</staticText>
+			</band>
+		</columnHeader>
+		<detail>
+			<band height="17"  isSplitAllowed="true" >
+				<textField isStretchWithOverflow="false" pattern="" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="1"
+						y="2"
+						width="25"
+						height="13"
+						forecolor="#000000"
+						key="textField"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times-Roman" pdfFontName="Courier" size="8" isBold="false"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{RUB_CTADEP}]]></textFieldExpression>
+				</textField>
+				<line direction="TopDown">
+					<reportElement
+						x="1"
+						y="16"
+						width="945"
+						height="1"
+						forecolor="#808080"
+						key="line"
+						positionType="FixRelativeToBottom"/>
+					<graphicElement stretchType="NoStretch" pen="Thin"/>
+				</line>
+				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="27"
+						y="2"
+						width="107"
+						height="13"
+						key="textField"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" leftPadding="2" rightBorder="None" rightBorderColor="#000000" rightPadding="2" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Courier New" pdfFontName="Courier" size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{PAR_DESCRIPCION}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="#,##0.00" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="316"
+						y="2"
+						width="70"
+						height="13"
+						key="textField-47"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" leftPadding="2" rightBorder="None" rightBorderColor="#000000" rightPadding="2" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="Times-Roman" pdfFontName="Courier" size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{ACTVAL}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="#,##0;-#,##0" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="134"
+						y="2"
+						width="35"
+						height="13"
+						key="textField-48"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" leftPadding="2" rightBorder="None" rightBorderColor="#000000" rightPadding="2" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="Times-Roman" pdfFontName="Courier" size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{NITEM}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="#,##0.00" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="386"
+						y="2"
+						width="68"
+						height="13"
+						key="textField-49"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" leftPadding="2" rightBorder="None" rightBorderColor="#000000" rightPadding="2" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="Times-Roman" pdfFontName="Courier" size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{VALBOLB}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="#,##0.00" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="454"
+						y="2"
+						width="72"
+						height="13"
+						key="textField-50"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" leftPadding="2" rightBorder="None" rightBorderColor="#000000" rightPadding="2" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="Times-Roman" pdfFontName="Courier" size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{VALBOL}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="#,##0.00" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="526"
+						y="2"
+						width="70"
+						height="13"
+						key="textField-51"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" leftPadding="2" rightBorder="None" rightBorderColor="#000000" rightPadding="2" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="Times-Roman" pdfFontName="Courier" size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{DEPBOLA}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="#,##0.00" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="596"
+						y="2"
+						width="70"
+						height="13"
+						key="textField-52"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle" lineSpacing="Single">
+						<font fontName="Times-Roman" pdfFontName="Courier" size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{DEPGES}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="#,##0.00" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="666"
+						y="2"
+						width="70"
+						height="13"
+						key="textField-53"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" leftPadding="2" rightBorder="None" rightBorderColor="#000000" rightPadding="2" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="Times-Roman" pdfFontName="Courier" size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{ACTDEP}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="#,##0.00" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="736"
+						y="1"
+						width="68"
+						height="13"
+						key="textField-54"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" leftPadding="2" rightBorder="None" rightBorderColor="#000000" rightPadding="2" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="Times-Roman" pdfFontName="Courier" size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{DEPBOLB}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="#,##0.00" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="804"
+						y="2"
+						width="70"
+						height="13"
+						key="textField-55"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="Times-Roman" pdfFontName="Courier" size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{DEPBOL}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="#,##0.00" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="874"
+						y="2"
+						width="72"
+						height="13"
+						key="textField-56"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" leftPadding="2" rightBorder="None" rightBorderColor="#000000" rightPadding="2" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="Times-Roman" pdfFontName="Courier" size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{VALRES}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="#,##0.00" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="241"
+						y="2"
+						width="75"
+						height="13"
+						key="textField-57"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" leftPadding="2" rightBorder="None" rightBorderColor="#000000" rightPadding="2" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="Times-Roman" pdfFontName="Courier" size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{INCORP}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="#,##0.00" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="169"
+						y="2"
+						width="72"
+						height="13"
+						key="textField-58"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" leftPadding="2" rightBorder="None" rightBorderColor="#000000" rightPadding="2" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="Times-Roman" pdfFontName="Courier" size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{VALBOLA}]]></textFieldExpression>
+				</textField>
+			</band>
+		</detail>
+		<columnFooter>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</columnFooter>
+		<pageFooter>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</pageFooter>
+		<lastPageFooter>
+			<band height="22"  isSplitAllowed="true" >
+				<line direction="TopDown">
+					<reportElement
+						x="1"
+						y="3"
+						width="947"
+						height="1"
+						forecolor="#000000"
+						key="line"/>
+					<graphicElement stretchType="NoStretch" pen="2Point"/>
+				</line>
+				<textField isStretchWithOverflow="false" pattern="#,##0;-#,##0" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="136"
+						y="6"
+						width="35"
+						height="15"
+						key="textField"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="Courier New" pdfFontName="Courier-Bold" size="8" isBold="true"/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$V{SUM_NITEM_2}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="#,##0.00;-#,##0.00" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="171"
+						y="6"
+						width="70"
+						height="15"
+						key="textField"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="Courier New" pdfFontName="Courier-Bold" size="7" isBold="true"/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$V{SUM_VALBOLA_2}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="#,##0.00;-#,##0.00" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="241"
+						y="6"
+						width="75"
+						height="15"
+						key="textField-23"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="Courier New" pdfFontName="Courier-Bold" size="7" isBold="true"/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$V{SUM_INCORP_2}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="#,##0.00;-#,##0.00" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="316"
+						y="6"
+						width="70"
+						height="15"
+						key="textField-24"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="Courier New" pdfFontName="Courier-Bold" size="7" isBold="true"/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$V{SUM_ACTVAL_2}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="#,##0.00;-#,##0.00" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="386"
+						y="6"
+						width="70"
+						height="15"
+						key="textField-25"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="Courier New" pdfFontName="Courier-Bold" size="7" isBold="true"/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$V{SUM_VALBOLB_2}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="#,##0.00;-#,##0.00" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="456"
+						y="6"
+						width="70"
+						height="15"
+						key="textField-41"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="Courier New" pdfFontName="Courier-Bold" size="7" isBold="true"/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$V{SUM_VALBOL_2}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="#,##0.00;-#,##0.00" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="526"
+						y="6"
+						width="70"
+						height="15"
+						key="textField-42"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="Courier New" pdfFontName="Courier-Bold" size="7" isBold="true"/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$V{SUM_DEPBOLA_2}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="#,##0.00;-#,##0.00" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="736"
+						y="6"
+						width="70"
+						height="15"
+						key="textField-43"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="Courier New" pdfFontName="Courier-Bold" size="7" isBold="true"/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$V{SUM_DEPBOLB_2}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="#,##0.00;-#,##0.00" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="806"
+						y="6"
+						width="70"
+						height="15"
+						key="textField-44"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="Courier New" pdfFontName="Courier-Bold" size="7" isBold="true"/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$V{SUM_DEPBOL_2}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="#,##0.00;-#,##0.00" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="876"
+						y="6"
+						width="70"
+						height="15"
+						key="textField-45"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="Courier New" pdfFontName="Courier-Bold" size="7" isBold="true"/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$V{SUM_VALRES_2}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="#,##0.00;-#,##0.00" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="596"
+						y="6"
+						width="70"
+						height="15"
+						key="textField-59"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="Courier New" pdfFontName="Courier-Bold" size="7" isBold="true"/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$V{SUM_DEPGES_2}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="#,##0.00;-#,##0.00" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="666"
+						y="6"
+						width="70"
+						height="15"
+						key="textField-60"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="Courier New" pdfFontName="Courier-Bold" size="7" isBold="true"/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$V{SUM_ACTDEP_2}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="102"
+						y="6"
+						width="33"
+						height="15"
+						key="staticText-11"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Courier New" pdfFontName="Courier-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[TOTAL]]></text>
+				</staticText>
+			</band>
+		</lastPageFooter>
+		<summary>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</summary>
+</jasperReport>

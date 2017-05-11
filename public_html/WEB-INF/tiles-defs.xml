@@ -1,0 +1,934 @@
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/tiles-config_1_1.dtd">
+<tiles-definitions>
+
+  <definition name="principal" path="/layout/ventana01.jsp">
+    <put name="title" value="SISTEMA DE ACTIVOS FIJOS"/>
+    <put name="subtitle" value=""/>
+    <put name="header" value="/header.jsp"/>
+    <put name="menu" value=""/>
+    <put name="body" value="/body.jsp"/>
+    <put name="footer" value="/footer.jsp"/>
+  </definition>
+
+  <definition name="principal1" path="/layout/ventana02.jsp">
+    <put name="title" value="SISTEMA DE ACTIVOS FIJOS"/>
+    <put name="subtitle" value=""/>
+    <put name="header" value="/header.jsp"/>
+    <put name="body" value="/body.jsp"/>
+    <put name="footer" value="/footer.jsp"/>
+  </definition>
+
+  <definition name="principal2" path="/layout/ventana05.jsp">
+    <put name="title" value="SISTEMA DE ACTIVOS FIJOS"/>
+    <put name="subtitle" value=""/>
+    <put name="body" value="/body.jsp"/>
+  </definition>
+
+  <definition name="principalpdf" path="/layout/ventana7.jsp">
+  </definition>
+
+  <definition name="principalr" path="/layout/ventana05.jsp">
+    <put name="title" value="SISTEMA DE ACTIVOS FIJOS"/>
+    <put name="subtitle" value=""/>
+    <put name="body" value="/body.jsp"/>
+    <put name="footer" value="/footer.jsp"/>
+  </definition>
+
+  <definition name="principal3" path="/layout/ventana06.jsp">
+    <put name="title" value="SISTEMA DE ACTIVOS FIJOS"/>
+    <put name="subtitle" value=""/>
+    <put name="body" value="/body.jsp"/>
+  </definition>
+
+  <definition name="pagina.login" extends="principal2">
+    <put name="subtitle" value=""/>
+    <put name="body" value="/Inicio.jsp"/>
+  </definition>
+
+  <definition name="pagina.menu" extends="principal">
+    <put name="menu" value="menu"/>
+  </definition>
+
+  <definition name="pagina.referencias" extends="principal">
+    <put name="menu" value="menu.referencias"/>
+    <put name="footer" value="/footerprincipal.jsp"/>    
+  </definition>
+
+  <definition name="pagina.activos" extends="principal">
+    <put name="menu" value="menu.activos"/>
+    <put name="body" value="/Activos.jsp"/>
+    <put name="footer" value="/footeractivos.jsp"/>    
+  </definition>
+
+  <definition name="pagina.activos1" extends="principal">
+    <put name="menu" value="menu.activos"/>
+    <put name="body" value="/Activos1.jsp"/>
+    <put name="footer" value="/footeractivos.jsp"/>    
+  </definition>
+
+  <definition name="pagina.activos2" extends="principal">
+    <put name="menu" value="menu.activos"/>
+    <put name="body" value="/Activos2.jsp"/>
+    <put name="footer" value="/footeractivos.jsp"/>    
+  </definition>
+
+  <definition name="pagina.activos21" extends="principal">
+    <put name="menu" value="menu.activos"/>
+    <put name="body" value="/Activos21.jsp"/>
+    <put name="footer" value="/footeractivos.jsp"/>    
+  </definition>
+
+  <definition name="pagina.activos3" extends="principal">
+    <put name="menu" value="menu.activos"/>
+    <put name="body" value="/Activos3.jsp"/>
+    <put name="footer" value="/footeractivos.jsp"/>    
+  </definition>
+
+  <definition name="pagina.activos4" extends="principal">
+    <put name="menu" value="menu.activos"/>
+    <put name="body" value="/Activos4.jsp"/>
+    <put name="footer" value="/footeractivos.jsp"/>    
+  </definition>
+
+  <definition name="pagina.activos10" extends="principal">
+    <put name="menu" value="menu.activos"/>
+    <put name="body" value="/Activos_a.jsp"/>
+    <put name="footer" value="/footeractivos.jsp"/>    
+  </definition>
+
+  <definition name="pagina.activos11" extends="principal">
+    <put name="menu" value="menu.activos"/>
+    <put name="body" value="/Activos1_a.jsp"/>
+    <put name="footer" value="/footeractivos.jsp"/>    
+  </definition>
+
+  <definition name="pagina.activos12" extends="principal">
+    <put name="menu" value="menu.activos"/>
+    <put name="body" value="/Activos2_a.jsp"/>
+    <put name="footer" value="/footeractivos.jsp"/>    
+  </definition>
+
+  <definition name="pagina.activos13" extends="principal">
+    <put name="menu" value="menu.activos"/>
+    <put name="body" value="/Activos3_a.jsp"/>
+    <put name="footer" value="/footeractivos.jsp"/>    
+  </definition>
+
+  <definition name="pagina.activos14" extends="principal">
+    <put name="menu" value="menu.activos"/>
+    <put name="body" value="/Activos4_a.jsp"/>
+    <put name="footer" value="/footeractivos.jsp"/>    
+  </definition>
+  
+  <definition name="pagina.activos10A" extends="principal1">
+    <put name="body" value="/Activos_a.jsp"/>
+    <put name="footer" value="/footeractivos.jsp"/>    
+  </definition>
+
+  <definition name="pagina.activos11A" extends="principal1">
+    <put name="body" value="/Activos1_a.jsp"/>
+    <put name="footer" value="/footeractivos.jsp"/>    
+  </definition>
+
+  <definition name="pagina.activos12A" extends="principal1">
+    <put name="body" value="/Activos2_a.jsp"/>
+    <put name="footer" value="/footeractivos.jsp"/>    
+  </definition>
+
+  <definition name="pagina.activos13A" extends="principal1">
+    <put name="body" value="/Activos3_a.jsp"/>
+    <put name="footer" value="/footeractivos.jsp"/>    
+  </definition>
+
+  <definition name="pagina.activos14A" extends="principal1">
+    <put name="body" value="/Activos4_a.jsp"/>
+    <put name="footer" value="/footeractivos.jsp"/>    
+  </definition>
+
+  <definition name="pagina.activos10B" extends="principal">
+    <put name="menu" value="menu.activos"/>
+    <put name="body" value="/Activos_a.jsp"/>
+    <put name="footer" value="/footeractivos.jsp"/>    
+  </definition>
+
+  <definition name="pagina.activos11B" extends="principal">
+    <put name="menu" value="menu.activos"/>
+    <put name="body" value="/Activos1_a.jsp"/>
+    <put name="footer" value="/footeractivos.jsp"/>    
+  </definition>
+
+  <definition name="pagina.activos12B" extends="principal">
+    <put name="menu" value="menu.activos"/>
+    <put name="body" value="/Activos2_a.jsp"/>
+    <put name="footer" value="/footeractivos.jsp"/>    
+  </definition>
+
+  <definition name="pagina.activos13B" extends="principal">
+    <put name="menu" value="menu.activos"/>
+    <put name="body" value="/Activos3_a.jsp"/>
+    <put name="footer" value="/footeractivos.jsp"/>    
+  </definition>
+
+  <definition name="pagina.activos14B" extends="principal">
+    <put name="menu" value="menu.activos"/>
+    <put name="body" value="/Activos4_a.jsp"/>
+    <put name="footer" value="/footeractivos.jsp"/>    
+  </definition>
+
+  <definition name="pagina.accesorios" extends="principal">
+    <put name="menu" value="menu.accesorios"/>
+    <put name="body" value="/Accesorios.jsp"/>
+    <put name="footer" value="/footerprincipal.jsp"/>    
+  </definition>
+
+  <definition name="pagina.reportardepreciaciones" extends="principal">
+    <put name="menu" value="menu.reportesdep"/>
+    <put name="body" value="/condicionesreporteactivos.jsp"/>
+    <put name="footer" value="/footerreportesdep.jsp"/>    
+  </definition>
+
+  <definition name="pagina.reportarinventarios" extends="principal">
+    <put name="menu" value="menu.reportesinv"/>
+    <put name="body" value="/condicionesreporteactivos.jsp"/>
+    <put name="footer" value="/footerreportesinv.jsp"/>    
+  </definition>
+
+  <definition name="pagina.depreciaciones" extends="principal">
+    <put name="menu" value="menu.depreciaciones"/>
+    <put name="footer" value="/footerprincipal.jsp"/>    
+  </definition>
+
+  <definition name="pagina.depreciacionesgen" extends="principal">
+    <put name="menu" value="menu.depreciaciones"/>
+    <put name="body" value="/Depreciaciones.jsp"/>
+    <put name="footer" value="/footerprincipal.jsp"/>    
+  </definition>
+
+  <definition name="pagina.depreciacionesreportar" extends="principal">
+    <put name="menu" value="menu.depreciaciones"/>
+    <put name="body" value="/DepreciacionesReportar.jsp"/>
+    <put name="footer" value="/footerprincipal.jsp"/>    
+  </definition>
+
+  <definition name="pagina.reportedepreciaciones" extends="principal2">
+    <put name="body" value="/reportedepreciacione.jsp"/>
+    <put name="footer" value="/footerprincipal.jsp"/>    
+  </definition>
+
+  <definition name="pagina.reportesactivos" extends="principalr">
+    <put name="body" value="/reporteactivos.jsp"/>
+    <put name="footer" value="/footerreportes.jsp"/>    
+  </definition>
+
+  <definition name="pagina.condicionesreportesactivos" extends="principal">
+    <put name="menu" value="menu.reportes"/>
+    <put name="body" value="/condicionesreporteactivos.jsp"/>
+    <put name="footer" value="/footerreportes.jsp"/>    
+  </definition>
+
+  <definition name="pagina.condicionesreportesdepre" extends="principal">
+    <put name="menu" value="menu.reportesdep"/>
+    <put name="body" value="/condicionesreporteactivos.jsp"/>
+    <put name="footer" value="/footerreportesdep.jsp"/>    
+  </definition>
+
+  <definition name="pagina.condicionesreportesinve" extends="principal">
+    <put name="menu" value="menu.reportesinv"/>
+    <put name="body" value="/condicionesreporteactivos.jsp"/>
+    <put name="footer" value="/footerreportesdep.jsp"/>    
+  </definition>
+
+  <definition name="pagina.reportes" extends="principal">
+    <put name="menu" value="menu.reportes"/>
+    <put name="footer" value="/footerprincipal.jsp"/>    
+  </definition>
+
+  <definition name="pagina.reportespdf" extends="principalpdf">
+  </definition>
+
+  <definition name="pagina.reportereferencia" extends="principal">
+    <put name="menu" value="menu.reportes"/>
+    <put name="body" value="/reportereferencia.jsp"/>
+    <put name="footer" value="/footerreportes.jsp"/>    
+  </definition>
+
+  <definition name="pagina.reporteresponsable" extends="principal">
+    <put name="menu" value="menu.reportes"/>
+    <put name="body" value="/reporteresponsable.jsp"/>
+    <put name="footer" value="/footerreportes.jsp"/>    
+  </definition>
+
+  <definition name="pagina.reporteubicacion" extends="principal">
+    <put name="menu" value="menu.reportes"/>
+    <put name="body" value="/reporteubicacion.jsp"/>
+    <put name="footer" value="/footerreportes.jsp"/>    
+  </definition>
+
+  <definition name="pagina.reporterango" extends="principal">
+    <put name="menu" value="menu.reportes"/>
+    <put name="body" value="/reporterango.jsp"/>
+    <put name="footer" value="/footerreportes.jsp"/>    
+  </definition>
+
+  <definition name="pagina.reportemovimiento" extends="principal">
+    <put name="menu" value="menu.reportes"/>
+    <put name="body" value="/reportemovimiento.jsp"/>
+    <put name="footer" value="/footerreportes.jsp"/>    
+  </definition>
+
+  <definition name="pagina.documentos" extends="principal">
+    <put name="menu" value="menu.documentos"/>
+    <put name="body" value="/Documentos.jsp"/>
+    <put name="footer" value="/footerprincipal.jsp"/>    
+  </definition>
+
+  <definition name="pagina.reportedocumentos" extends="principalpdf">
+  </definition>
+
+  <definition name="pagina.inventarios" extends="principal">
+    <put name="menu" value="menu.inventarios"/>
+    <put name="body" value="/Inventarios.jsp"/>
+    <put name="footer" value="/footerprincipal.jsp"/>    
+  </definition>
+
+  <definition name="pagina.mejorasrebajas" extends="principal">
+    <put name="menu" value="menu.mejorasrebajas"/>
+    <put name="body" value="/MejorasRebajas.jsp"/>
+    <put name="footer" value="/footerprincipal.jsp"/>    
+  </definition>
+
+  <definition name="pagina.revaluos" extends="principal">
+    <put name="menu" value="menu.revaluos"/>
+    <put name="body" value="/Revaluos.jsp"/>
+    <put name="footer" value="/footerprincipal.jsp"/>    
+  </definition>
+
+  <definition name="pagina.parametros" extends="principal">
+    <put name="menu" value="menu.parametros"/>
+    <put name="body" value="/Parametros.jsp"/>
+    <put name="footer" value="/footerprincipal.jsp"/>    
+  </definition>
+ 
+  <definition name="pagina.subir" extends="principal">
+    <put name="menu" value="menu.subir"/>
+    <put name="body" value="/Subir.jsp"/>
+    <put name="footer" value="/footerprincipal.jsp"/>    
+  </definition>
+
+  <definition name="pagina.bajar" extends="principal">
+    <put name="menu" value="menu.subir"/>
+    <put name="body" value="/Bajar.jsp"/>
+    <put name="footer" value="/footerprincipal.jsp"/>    
+  </definition>
+
+  <definition name="pagina.financiadores" extends="principal">
+    <put name="menu" value="menu.financiadores"/>
+    <put name="body" value="/Financiadores.jsp"/>
+    <put name="footer" value="/footeradministracion.jsp"/>
+  </definition>
+
+  <definition name="pagina.reportefinanciadores" extends="principal3">
+    <put name="body" value="/Financiadores.jsp"/>
+  </definition>
+
+  <definition name="pagina.funcionarios" extends="principal">
+    <put name="menu" value="menu.funcionarios"/>
+    <put name="body" value="/Funcionarios.jsp"/>
+    <put name="footer" value="/footeradministracion.jsp"/>
+  </definition>
+  <definition name="pagina.reportefuncionarios" extends="principal3">
+    <put name="body" value="/Funcionarios.jsp"/>
+  </definition>
+
+  <definition name="pagina.grupos" extends="principal">
+    <put name="menu" value="menu.grupos"/>
+    <put name="body" value="/Grupos.jsp"/>
+    <put name="footer" value="/footeradministracion.jsp"/>
+  </definition>
+  <definition name="pagina.reportegrupos" extends="principal3">
+    <put name="body" value="/Grupos.jsp"/>
+  </definition>
+
+  <definition name="pagina.oficinas" extends="principal">
+    <put name="menu" value="menu.oficinas"/>
+    <put name="body" value="/Oficinas.jsp"/>
+    <put name="footer" value="/footeradministracion.jsp"/>
+  </definition>
+  <definition name="pagina.reporteoficinas" extends="principal3">
+    <put name="body" value="/Oficinas.jsp"/>
+  </definition>
+  
+  <definition name="pagina.partidas" extends="principal">
+    <put name="menu" value="menu.partidas"/>
+    <put name="body" value="/Partidas.jsp"/>
+    <put name="footer" value="/footeradministracion.jsp"/>
+  </definition>
+  <definition name="pagina.reportepartidas" extends="principal3">
+    <put name="body" value="/Partidas.jsp"/>
+  </definition>
+  
+  <definition name="pagina.proyectos" extends="principal">
+    <put name="menu" value="menu.proyectos"/>
+    <put name="body" value="/Proyectos.jsp"/>
+    <put name="footer" value="/footeradministracion.jsp"/>
+  </definition>
+  <definition name="pagina.reporteproyectos" extends="principal3">
+    <put name="body" value="/Proyectos.jsp"/>
+  </definition>
+
+  <definition name="pagina.regionales" extends="principal">
+    <put name="menu" value="menu.regionales"/>
+    <put name="body" value="/Regionales.jsp"/>
+    <put name="footer" value="/footeradministracion.jsp"/>
+  </definition>
+
+  <definition name="pagina.reporteregionales" extends="principal3">
+    <put name="body" value="/Regionales.jsp"/>
+  </definition>
+
+  <definition name="pagina.usuarios" extends="principal">
+    <put name="menu" value="menu.usuarios"/>
+    <put name="body" value="/Usuarios.jsp"/>
+    <put name="footer" value="/footersubir.jsp"/>
+  </definition>
+
+  <definition name="pagina.reporteusuarios" extends="principal3">
+    <put name="body" value="/Usuarios.jsp"/>
+  </definition>
+
+  <definition name="pagina.rubros" extends="principal">
+    <put name="menu" value="menu.rubros"/>
+    <put name="body" value="/Rubros.jsp"/>
+    <put name="footer" value="/footeradministracion.jsp"/>
+  </definition>
+  <definition name="pagina.reporterubros" extends="principal3">
+    <put name="body" value="/Rubros.jsp"/>
+  </definition>
+
+  <definition name="pagina.secbarras" extends="principal">
+    <put name="menu" value="menu.secbarras"/>
+    <put name="body" value="/Secbarras.jsp"/>
+    <put name="footer" value="/footeradministracion.jsp"/>
+  </definition>
+  <definition name="pagina.reportesecbarras" extends="principal3">
+    <put name="body" value="/Secbarras.jsp"/>
+  </definition>
+
+  <definition name="pagina.sectiposdoc" extends="principal">
+    <put name="menu" value="menu.sectiposdoc"/>
+    <put name="body" value="/Sectiposdoc.jsp"/>
+    <put name="footer" value="/footeradministracion.jsp"/>
+  </definition>
+  <definition name="pagina.reportesectiposdoc" extends="principal3">
+    <put name="body" value="/Sectiposdoc.jsp"/>
+  </definition>
+
+  <definition name="pagina.tipocambio" extends="principal">
+    <put name="menu" value="menu.tipocambio"/>
+    <put name="body" value="/Tipocambio.jsp"/>
+    <put name="footer" value="/footeradministracion.jsp"/>
+  </definition>
+  <definition name="pagina.reportetipocambio" extends="principal3">
+    <put name="body" value="/Tipocambio.jsp"/>
+  </definition>
+
+  <definition name="pagina.tiposbaja" extends="principal">
+    <put name="menu" value="menu.tiposbaja"/>
+    <put name="body" value="/Tiposbaja.jsp"/>
+    <put name="footer" value="/footeradministracion.jsp"/>
+  </definition>
+  <definition name="pagina.reportetiposbaja" extends="principal3">
+    <put name="body" value="/Tiposbaja.jsp"/>
+  </definition>
+
+  <definition name="pagina.tiposdoc" extends="principal">
+    <put name="menu" value="menu.tiposdoc"/>
+    <put name="body" value="/Tiposdoc.jsp"/>
+    <put name="footer" value="/footeradministracion.jsp"/>
+  </definition>
+  <definition name="pagina.reportetiposdoc" extends="principal3">
+    <put name="body" value="/Tiposdoc.jsp"/>
+  </definition>
+
+  <definition name="pagina.ubicaciones" extends="principal">
+    <put name="menu" value="menu.ubicaciones"/>
+    <put name="body" value="/Ubicaciones.jsp"/>
+    <put name="footer" value="/footeradministracion.jsp"/>
+  </definition>
+
+
+  <definition name="pagina.reporteubicaciones" extends="principal3">
+    <put name="body" value="/Ubicaciones.jsp"/>
+  </definition>
+
+  <!-- Pagina del listado -->
+  <definition name="pagina.listado" extends="principal">
+    <put name="menu" value="menu"/>
+    <put name="body" value="/Reporte.jsp"/>
+  </definition>
+  
+  <!--  Menus  -->
+  
+  <definition name="menu" path="/layout/ventana03.jsp">
+    <putList name="list">
+      <add value="menu.sistema.menu"/>
+    </putList>
+  </definition>
+  <definition name="menu.referencias" path="/layout/ventana03.jsp">
+    <putList name="list">
+      <add value="menu.sistema.referencias"/>
+    </putList>
+  </definition>
+
+  <definition name="menu.accesorios" path="/layout/ventana03.jsp">
+    <putList name="list">
+      <add value="item.accesorios"/>
+    </putList>
+  </definition>
+  <definition name="menu.activos" path="/layout/ventana03.jsp">
+    <putList name="list">
+      <add value="item.activos"/>
+    </putList>
+  </definition>
+  <definition name="menu.depreciaciones" path="/layout/ventana03.jsp">
+    <putList name="list">
+      <add value="item.depreciaciones"/>
+    </putList>
+  </definition>
+  <definition name="menu.reportes" path="/layout/ventana03.jsp">
+    <putList name="list">
+      <add value="item.reportes"/>
+    </putList>
+  </definition>
+  <definition name="menu.reportesdep" path="/layout/ventana03.jsp">
+    <putList name="list">
+      <add value="item.reportesdep"/>
+    </putList>
+  </definition>
+  <definition name="menu.reportesinv" path="/layout/ventana03.jsp">
+    <putList name="list">
+      <add value="item.reportesinv"/>
+    </putList>
+  </definition>
+  <definition name="menu.documentos" path="/layout/ventana03.jsp">
+    <putList name="list">
+      <add value="item.documentos"/>
+    </putList>
+  </definition>
+  <definition name="menu.inventarios" path="/layout/ventana03.jsp">
+    <putList name="list">
+      <add value="item.inventarios"/>
+    </putList>
+  </definition>
+  <definition name="menu.mejorasrebajas" path="/layout/ventana03.jsp">
+    <putList name="list">
+      <add value="item.mejorasrebajas"/>
+    </putList>
+  </definition>
+  <definition name="menu.parametros" path="/layout/ventana03.jsp">
+    <putList name="list">
+      <add value="item.parametros"/>
+    </putList>
+  </definition>
+  <definition name="menu.subir" path="/layout/ventana03.jsp">
+    <putList name="list">
+      <add value="item.subir"/>
+    </putList>
+  </definition>
+  <definition name="menu.revaluos" path="/layout/ventana03.jsp">
+    <putList name="list">
+      <add value="item.revaluos"/>
+    </putList>
+  </definition>
+
+  <definition name="menu.financiadores" path="/layout/ventana03.jsp">
+    <putList name="list">
+      <add value="item.financiadores"/>
+    </putList>
+  </definition>
+  <definition name="menu.funcionarios" path="/layout/ventana03.jsp">
+    <putList name="list">
+      <add value="item.funcionarios"/>
+    </putList>
+  </definition>
+  <definition name="menu.grupos" path="/layout/ventana03.jsp">
+    <putList name="list">
+      <add value="item.grupos"/>
+    </putList>
+  </definition>
+  <definition name="menu.oficinas" path="/layout/ventana03.jsp">
+    <putList name="list">
+      <add value="item.oficinas"/>
+    </putList>
+  </definition>
+  <definition name="menu.partidas" path="/layout/ventana03.jsp">
+    <putList name="list">
+      <add value="item.partidas"/>
+    </putList>
+  </definition>
+  <definition name="menu.proyectos" path="/layout/ventana03.jsp">
+    <putList name="list">
+      <add value="item.proyectos"/>
+    </putList>
+  </definition>
+  <definition name="menu.regionales" path="/layout/ventana03.jsp">
+    <putList name="list">
+      <add value="item.regionales"/>
+    </putList>
+  </definition>
+  <definition name="menu.usuarios" path="/layout/ventana03.jsp">
+    <putList name="list">
+      <add value="item.usuarios"/>
+    </putList>
+  </definition>
+  <definition name="menu.rubros" path="/layout/ventana03.jsp">
+    <putList name="list">
+      <add value="item.rubros"/>
+    </putList>
+  </definition>
+  <definition name="menu.secbarras" path="/layout/ventana03.jsp">
+    <putList name="list">
+      <add value="item.secbarras"/>
+    </putList>
+  </definition>
+  <definition name="menu.sectiposdoc" path="/layout/ventana03.jsp">
+    <putList name="list">
+      <add value="item.sectiposdoc"/>
+    </putList>
+  </definition>
+  <definition name="menu.tipocambio" path="/layout/ventana03.jsp">
+    <putList name="list">
+      <add value="item.tipocambio"/>
+    </putList>
+  </definition>
+  <definition name="menu.tiposbaja" path="/layout/ventana03.jsp">
+    <putList name="list">
+      <add value="item.tiposbaja"/>
+    </putList>
+  </definition>
+  <definition name="menu.tiposdoc" path="/layout/ventana03.jsp">
+    <putList name="list">
+      <add value="item.tiposdoc"/>
+    </putList>
+  </definition>
+  <definition name="menu.ubicaciones" path="/layout/ventana03.jsp">
+    <putList name="list">
+      <add value="item.ubicaciones"/>
+    </putList>
+  </definition>
+
+
+  <definition name="menu.sistema.menu" path="/layout/ventana04.jsp">
+    <put name="title" value="MENÚ PRINCIPAL"/>
+    <putList name="items">
+       <item value="ACT" link="activos.do"   classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="REV" link="revaluos.do"   classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="DEP" link="depreciaciones.do"   classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="DOC" link="documentos.do"   classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="REF" link="referencias.do"   classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="INV" link="inventarios.do"   classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="PAT" link="parametros.do"   classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="SUB" link="subir.do"   classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="REP" link="reportes.do"   classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="CAM" link="pedirclave.do"   classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="SAL" link="salir.do"   classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       </putList>
+  </definition>
+  <definition name="menu.sistema.referencias" path="/layout/ventana04.jsp">
+    <put name="title" value="ADMINISTRACIÓN"/>
+    <putList name="items">
+       <item value="PAR" link="partidas.do"   classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="RUB" link="rubros.do"   classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="REG" link="regionales.do"   classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="BAR" link="secbarras.do"   classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="UBI" link="ubicaciones.do"   classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>           
+       <item value="OFI" link="oficinas.do"   classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="FUN" link="funcionarios.do"   classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="FIN" link="financiadores.do"   classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="PRO" link="proyectos.do"   classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="GRU" link="grupos.do"   classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="MOT" link="tiposbaja.do"   classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="TDO" link="tiposdoc.do"   classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="SEC" link="sectiposdoc.do"   classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="TCA" link="tipocambio.do"   classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="RET" link="paginamenu.do"   classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       </putList>
+  </definition>
+
+  <definition name="item.accesorios" path="/layout/ventana04.jsp">
+    <put name="title" value="ACCESORIOS"/>
+    <putList name="items">
+       <item value="AC1" link="insertaraccesorios.do"    classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="AC2" link="modificaraccesorios.do"   classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="AC3" link="eliminaraccesorios.do"    classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+    </putList>
+  </definition>
+  <definition name="item.activos" path="/layout/ventana04.jsp">
+    <put name="title" value="ACTIVOS"/>
+    <putList name="items">
+       <item value="AT1" link="insertaractivos.do"    classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="AT2" link="modificaractivos.do"   classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="AT3" link="eliminaractivos.do"    classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="AT4" link="consultaractivos.do"    classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="AT5" link="paginamenu.do"    classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+    </putList>
+  </definition>
+  <definition name="item.depreciaciones" path="/layout/ventana04.jsp">
+    <put name="title" value="DEPRECIACIONES"/>
+    <putList name="items">
+       <item value="DE1" link="generardepreciaciones.do"    classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="DE2" link="reportardepreciaciones.do"   classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="DE3" link="consultardepreciaciones.do"   classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="DE4" link="paginamenu.do"   classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+    </putList>
+  </definition>
+  <definition name="item.reportes" path="/layout/ventana04.jsp">
+    <put name="title" value="REPORTES"/>
+    <putList name="items">
+       <item value="RP1" link="reporte1.do"   classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="RP2" link="reporte2.do"   classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="RP3" link="reporte3.do"   classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="RP4" link="reporte4.do"   classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="RP5" link="reporte5.do"   classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="RP6" link="reporte6.do"   classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="RP7" link="reporte7.do"   classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="RP8" link="reporte8.do"   classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="RP9" link="reporte9.do"   classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="RP10" link="reporte10.do"   classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="RP11" link="reporte11.do"   classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="RP12" link="reporte12.do"   classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="RP18" link="reporte18.do"   classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>       
+       <item value="RP19" link="reporte19.do"   classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="RP20" link="paginamenu.do"   classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+    </putList>
+  </definition>
+    <definition name="item.reportesdep" path="/layout/ventana04.jsp">
+    <put name="title" value="REPORTES"/>
+    <putList name="items">
+       <item value="RD1" link="reportedep1.do"   classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="RD2" link="reportedep2.do"   classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="RD3" link="reportedep3.do"   classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="RD4" link="reportedep4.do"   classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="RD5" link="reportedep5.do"   classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="RD6" link="reportedep6.do"   classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="RD7" link="reportedep7.do"   classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="RD8" link="reportedep8.do"   classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="RD9" link="reportedep9.do"   classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>       
+       <item value="RD10" link="reportedep10.do"   classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="RD11" link="reportedep11.do"   classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="RD12" link="reportedep12.do"   classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="RD13" link="depreciaciones.do"   classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+    </putList>
+  </definition>
+    <definition name="item.reportesinv" path="/layout/ventana04.jsp">
+    <put name="title" value="REPORTES"/>
+    <putList name="items">
+       <item value="RP13" link="reporte13.do"   classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="RP14" link="reporte14.do"   classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="RP15" link="reporte15.do"   classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="RP16" link="reporte16.do"   classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="RP17" link="reporte17.do"   classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>     
+       <item value="RP20" link="inventarios.do"   classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+    </putList>
+  </definition>
+  <definition name="item.documentos" path="/layout/ventana04.jsp">
+    <put name="title" value="DOCUMENTOS"/>
+    <putList name="items">
+       <item value="DO1" link="insertardocumentos.do"    classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="DO2" link="modificardocumentos.do"   classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="DO3" link="eliminardocumentos.do"    classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="DO4" link="confirmardocumentos.do"   classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="DO5" link="reportardocumentos.do"    classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="DO6" link="paginamenu.do"    classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+    </putList>
+  </definition>
+  <definition name="item.inventarios" path="/layout/ventana04.jsp">
+    <put name="title" value="INVENTARIOS"/>
+    <putList name="items">
+       <item value="IN1" link="insertarinventarios.do"    classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="IN2" link="modificarinventarios.do"   classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="IN3" link="eliminarinventarios.do"    classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="IN4" link="generarinventarios.do"    classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="IN5" link="reportarinventarios.do"    classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="IN6" link="paginamenu.do"    classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+    </putList>
+  </definition>
+  <definition name="item.parametros" path="/layout/ventana04.jsp">
+    <put name="title" value="PARÁMETROS"/>
+    <putList name="items">
+       <item value="PT1" link="insertarparametros.do"    classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="PT2" link="modificarparametros.do"   classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="PT3" link="eliminarparametros.do"    classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="PT4" link="paginamenu.do"    classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+    </putList>
+  </definition>
+  <definition name="item.subir" path="/layout/ventana04.jsp">
+    <put name="title" value="SUBIR"/>
+    <putList name="items">
+       <item value="SU1" link="subirinventario.do"    classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="SU2" link="bajartablas.do"    classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="SU3" link="usuarios.do"    classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="SU5" link="paginamenu.do"    classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+    </putList>
+  </definition>
+  <definition name="item.revaluos" path="/layout/ventana04.jsp">
+    <put name="title" value="REVALUOS"/>
+    <putList name="items">
+       <item value="RV1" link="insertarrevaluos.do"    classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="RV2" link="modificarrevaluos.do"   classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="RV3" link="eliminarrevaluos.do"    classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="RV4" link="consultarrevaluos.do"    classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="RV5" link="paginamenu.do"    classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+    </putList>
+  </definition>
+
+  <definition name="item.financiadores" path="/layout/ventana04.jsp">
+    <put name="title" value="FINANCIADORES"/>
+    <putList name="items">
+       <item value="FI1" link="insertarfinanciadores.do"    classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="FI2" link="modificarfinanciadores.do"   classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="FI3" link="eliminarfinanciadores.do"    classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="FI4" link="reportarfinanciadores.do"    classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="FI5" link="referencias.do"    classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+    </putList>
+  </definition>
+  <definition name="item.funcionarios" path="/layout/ventana04.jsp">
+    <put name="title" value="FUNCIONARIOS"/>
+    <putList name="items">
+       <item value="FU1" link="insertarfuncionarios.do"    classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="FU2" link="modificarfuncionarios.do"   classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="FU3" link="eliminarfuncionarios.do"    classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="FU4" link="reportarfuncionarios.do"    classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="FU5" link="referencias.do"    classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+    </putList>
+  </definition>
+  <definition name="item.grupos" path="/layout/ventana04.jsp">
+    <put name="title" value="GRUPO ACTIVOS"/>
+    <putList name="items">
+       <item value="GR1" link="insertargrupos.do"    classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="GR2" link="modificargrupos.do"   classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="GR3" link="eliminargrupos.do"    classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="GR4" link="reportargrupos.do"    classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="GR5" link="referencias.do"    classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+    </putList>
+  </definition>
+  <definition name="item.oficinas" path="/layout/ventana04.jsp">
+    <put name="title" value="OFICINAS"/>
+    <putList name="items">
+       <item value="OF1" link="insertaroficinas.do"    classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="OF2" link="modificaroficinas.do"   classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="OF3" link="eliminaroficinas.do"    classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="OF4" link="reportaroficinas.do"    classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="OF5" link="referencias.do"    classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+    </putList>
+  </definition>
+  <definition name="item.partidas" path="/layout/ventana04.jsp">
+    <put name="title" value="PARTIDAS"/>
+    <putList name="items">
+       <item value="PA1" link="insertarpartidas.do"    classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="PA2" link="modificarpartidas.do"   classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="PA3" link="eliminarpartidas.do"    classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="PA4" link="reportarpartidas.do"    classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="PA5" link="referencias.do"    classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+    </putList>
+  </definition>
+  <definition name="item.proyectos" path="/layout/ventana04.jsp">
+    <put name="title" value="PROYECTOS"/>
+    <putList name="items">
+       <item value="PR1" link="insertarproyectos.do"    classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="PR2" link="modificarproyectos.do"   classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="PR3" link="eliminarproyectos.do"    classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="PR4" link="reportarproyectos.do"    classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="PR5" link="referencias.do"    classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+    </putList>
+  </definition>
+  <definition name="item.regionales" path="/layout/ventana04.jsp">
+    <put name="title" value="REGIONALES"/>
+    <putList name="items">
+       <item value="RE1" link="insertarregionales.do"    classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="RE2" link="modificarregionales.do"   classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="RE3" link="eliminarregionales.do"    classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="RE4" link="reportarregionales.do"    classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="RE5" link="referencias.do"    classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+    </putList>
+  </definition>
+  <definition name="item.usuarios" path="/layout/ventana04.jsp">
+    <put name="title" value="USUARIOS"/>
+    <putList name="items">
+       <item value="US1" link="insertarusuarios.do"    classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="US2" link="modificarusuarios.do"   classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="US3" link="eliminarusuarios.do"    classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="US4" link="reportarusuarios.do"    classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="US5" link="subir.do"    classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+    </putList>
+  </definition>
+  <definition name="item.rubros" path="/layout/ventana04.jsp">
+    <put name="title" value="RUBROS"/>
+    <putList name="items">
+       <item value="RU1" link="insertarrubros.do"    classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="RU2" link="modificarrubros.do"   classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="RU3" link="eliminarrubros.do"    classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="RU4" link="reportarrubros.do"    classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="RU5" link="referencias.do"    classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+    </putList>
+  </definition>
+  <definition name="item.secbarras" path="/layout/ventana04.jsp">
+    <put name="title" value="CÓDIGO BARRAS"/>
+    <putList name="items">
+       <item value="BA1" link="insertarsecbarras.do"    classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="BA3" link="eliminarsecbarras.do"    classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="BA4" link="reportarsecbarras.do"    classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="BA5" link="referencias.do"    classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+    </putList>
+  </definition>
+  <definition name="item.sectiposdoc" path="/layout/ventana04.jsp">
+    <put name="title" value="CORRELATIVO ACTAS"/>
+    <putList name="items">
+       <item value="SE1" link="insertarsectiposdoc.do"    classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="SE2" link="modificarsectiposdoc.do"   classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="SE3" link="eliminarsectiposdoc.do"    classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="SE4" link="reportarsectiposdoc.do"    classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="SE5" link="referencias.do"    classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+    </putList>
+  </definition>
+  <definition name="item.tipocambio" path="/layout/ventana04.jsp">
+    <put name="title" value="TIPO CAMBIO"/>
+    <putList name="items">
+       <item value="TC1" link="insertartipocambio.do"    classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="TC2" link="modificartipocambio.do"   classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="TC3" link="eliminartipocambio.do"    classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="TC4" link="reportartipocambio.do"    classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="TC5" link="referencias.do"    classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+    </putList>
+  </definition>
+  <definition name="item.tiposbaja" path="/layout/ventana04.jsp">
+    <put name="title" value="MOTIVOS BAJA"/>
+    <putList name="items">
+       <item value="MO1" link="insertartiposbaja.do"    classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="MO2" link="modificartiposbaja.do"   classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="MO3" link="eliminartiposbaja.do"    classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="MO4" link="reportartiposbaja.do"    classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="MO5" link="referencias.do"    classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+    </putList>
+  </definition>
+  <definition name="item.tiposdoc" path="/layout/ventana04.jsp">
+    <put name="title" value="TIPO ACTA"/>
+    <putList name="items">
+       <item value="TD1" link="insertartiposdoc.do"    classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="TD2" link="modificartiposdoc.do"   classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="TD3" link="eliminartiposdoc.do"    classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="TD4" link="reportartiposdoc.do"    classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="TD5" link="referencias.do"    classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+    </putList>
+  </definition>
+  <definition name="item.ubicaciones" path="/layout/ventana04.jsp">
+    <put name="title" value="UBICACIONES"/>
+    <putList name="items">
+       <item value="UB1" link="insertarubicaciones.do"    classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="UB2" link="modificarubicaciones.do"   classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="UB3" link="eliminarubicaciones.do"    classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="UB4" link="reportarubicaciones.do"    classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+       <item value="UB5" link="referencias.do"    classtype="org.apache.struts.tiles.beans.SimpleMenuItem"/>
+    </putList>
+  </definition>
+</tiles-definitions>

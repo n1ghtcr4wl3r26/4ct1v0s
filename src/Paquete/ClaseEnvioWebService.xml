@@ -1,0 +1,74 @@
+<?xml version = '1.0' encoding = 'windows-1252'?>
+<XMLDataNode xmlns="http://xmlns.oracle.com/jdeveloper/903/deploy/webservices" nselem="XMLDataNode" class="oracle.jdevimpl.webservices.deploy.WebServicesFolder">
+   <JMSModel/>
+   <SPModel/>
+   <archiveProfile>
+      <archiveOptions>
+         <additionalManifests/>
+         <compressed>false</compressed>
+         <hasManifest>true</hasManifest>
+         <mainClass/>
+      </archiveOptions>
+      <cdaSettings>
+         <additionalArchives/>
+         <afterFilters/>
+         <beforeFilters/>
+         <duringFilters/>
+         <selectedArchives>
+            <archives/>
+            <selectionMode>0</selectionMode>
+         </selectedArchives>
+      </cdaSettings>
+      <jarURL path="ClaseEnvio.jar" id="0"/>
+      <profileDeps/>
+      <selectedProjectFiles>
+         <autoInclude>false</autoInclude>
+         <deploySourceAs>0</deploySourceAs>
+         <files>
+            <Item path="ClaseEnvio.java" id="2"/>
+         </files>
+         <selectionFilters/>
+      </selectedProjectFiles>
+   </archiveProfile>
+   <defaultJarURL idref="0"/>
+   <deployPlatform id="1">4</deployPlatform>
+   <listOfChildren class="java.util.ArrayList">
+      <Item class="oracle.jdeveloper.model.JavaSourceNode">
+         <URL path="IClaseEnvio.java"/>
+      </Item>
+      <Item class="oracle.jdevimpl.webservices.ide.WSDLArtifactNode">
+         <URL path="ClaseEnvio.wsdl"/>
+      </Item>
+   </listOfChildren>
+   <model>
+      <DDFileLocation>file:/F:/Desarrollo/JDeveloper/wsUsuario/public_html/WEB-INF/web.xml</DDFileLocation>
+      <EJBClass/>
+      <EJBType>0</EJBType>
+      <GUID>6ee42038-0109-1000-8002-ac1001af74b3</GUID>
+      <IFFileLocation/>
+      <JNDILocation/>
+      <SOAPServletURL>http://localhost:8888/wUsuario-pUsuario-context-root/wsUsuario</SOAPServletURL>
+      <WSDLFileLocation>file:/F:/Desarrollo/JDeveloper/wsUsuario/src/Paquete/ClaseEnvio.wsdl</WSDLFileLocation>
+      <appServer/>
+      <className>ClaseEnvio</className>
+      <deployPlatform idref="1"/>
+      <homeInterface/>
+      <portNo>8888</portNo>
+      <qualifiedClassName>Paquete.ClaseEnvio</qualifiedClassName>
+      <scope>0</scope>
+      <selectedInterfaces class="java.util.ArrayList">
+         <Item class="java.lang.String">pListaOpciones(java.lang.String, java.lang.String, java.lang.String) : Paquete.ClaseUsuario</Item>
+         <Item class="java.lang.String">pCambiaClave(java.lang.String, java.lang.String, java.lang.String) : int</Item>
+      </selectedInterfaces>
+      <showSuperclassMethods>false</showSuperclassMethods>
+      <stateless>true</stateless>
+      <staticInvocation>false</staticInvocation>
+      <targetNamespace>http://Paquete/ClaseEnvio.wsdl</targetNamespace>
+      <timeout>60</timeout>
+      <webServiceFileRoot>file:/F:/Desarrollo/JDeveloper/wsUsuario/src/Paquete/</webServiceFileRoot>
+      <webServiceType>10</webServiceType>
+      <webServiceURI>wsUsuario</webServiceURI>
+      <webServiceURL idref="2"/>
+   </model>
+   <webServiceURL idref="2"/>
+</XMLDataNode>

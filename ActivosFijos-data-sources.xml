@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'windows-1252'?>
+<!DOCTYPE data-sources PUBLIC "Orion data-sources" "http://xmlns.oracle.com/ias/dtds/data-sources.dtd">
+<data-sources>
+   <data-source class="com.evermind.sql.DriverManagerDataSource" connection-driver="oracle.jdbc.driver.OracleDriver" ejb-location="jdbc/Connection2DS" inactivity-timeout="30" location="jdbc/Connection2CoreDS" name="jdev-connection:Connection2" password="activos" pooled-location="jdbc/Connection2PooledDS" url="jdbc:oracle:thin:@172.16.0.16:1521:desa" username="activos" xa-location="jdbc/xa/Connection2XADS"/>
+   <data-source class="com.evermind.sql.DriverManagerDataSource" connection-driver="oracle.jdbc.driver.OracleDriver" ejb-location="jdbc/Connection1DS" inactivity-timeout="30" location="jdbc/Connection1CoreDS" name="jdev-connection:Connection1" password="scdd" pooled-location="jdbc/Connection1PooledDS" url="jdbc:oracle:thin:@172.16.2.2:1521:basy" username="scdd" xa-location="jdbc/xa/Connection1XADS"/>
+   <data-source class="com.evermind.sql.DriverManagerDataSource" connection-driver="oracle.jdbc.driver.OracleDriver" ejb-location="jdbc/Connection3DS" inactivity-timeout="30" location="jdbc/Connection3CoreDS" name="jdev-connection:Connection3" password="dav" pooled-location="jdbc/Connection3PooledDS" url="jdbc:oracle:thin:@172.16.0.16:1521:desa" username="dav" xa-location="jdbc/xa/Connection3XADS"/>
+</data-sources>
